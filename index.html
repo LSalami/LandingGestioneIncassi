@@ -1,0 +1,82 @@
+<!--html per aprire le 5 pagine html locali-->
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestione Incassi</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #007BFF;
+            color: white;
+        }
+
+        @media (max-width: 600px) {
+            .button-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            button {
+                width: 80%;
+                margin: 5px 0;
+            }
+        }
+    </style>
+    <div class="container">
+        <h1>Gestione Incassi</h1>
+        <div class="button-container">
+            <button onclick="openPage('1991.html')">1991</button>
+            <button onclick="openPage('1995.html')">1995</button>
+            <button onclick="openPage('1996.html')">1996</button>
+            <button onclick="openPage('1997.html')">1997</button>
+            <button onclick="openPage('2000.html')">2000</button>
+            <button onclick="openPage('2025.html')">2025</button>
+        </div>
+    </div>
+
+</body>
+<script>
+    // Funzione per aprire una pagina specifica
+    function openPage(page) {
+        window.open(page, '_self');
+    }
+</script>
+</body>
+
+</html>

@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>*** GESTIONE INCASSI - IL FUTURO È QUI! ***</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Orbitron:wght@400;700;900&display=swap');
+
+        /* CSS Reset con stile anni 90 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Comic Neue', cursive;
+            background: linear-gradient(45deg, #ff00ff, #00ffff, #ffff00, #ff00ff);
+            background-size: 400% 400%;
+            animation: gradientShift 8s ease infinite;
+            color: #000080;
+            overflow-x: hidden;
+        }
+
+        @keyframes gradientShift {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* Header con effetto neon */
+        .header {
+            background: #000;
+            color: #00ff00;
+            padding: 20px;
+            text-align: center;
+            border: 5px solid #ff00ff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0% {
+                left: -100%;
+            }
+
+            100% {
+                left: 100%;
+            }
+        }
+
+        .neon-title {
+            font-family: 'Orbitron', monospace;
+            font-size: 3rem;
+            font-weight: 900;
+            text-shadow:
+                0 0 5px #00ff00,
+                0 0 10px #00ff00,
+                0 0 20px #00ff00,
+                0 0 40px #00ff00;
+            animation: neonFlicker 2s infinite alternate;
+        }
+
+        @keyframes neonFlicker {
+
+            0%,
+            18%,
+            22%,
+            25%,
+            53%,
+            57%,
+            100% {
+                text-shadow:
+                    0 0 5px #00ff00,
+                    0 0 10px #00ff00,
+                    0 0 20px #00ff00,
+                    0 0 40px #00ff00;
+            }
+
+            20%,
+            24%,
+            55% {
+                text-shadow: none;
+            }
+        }
+
+        /* Barra di navigazione retrò */
+        .navbar {
+            background: linear-gradient(45deg, #ff6b35, #f7931e, #ffd23f);
+            padding: 10px;
+            border: 3px solid #000;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            padding: 10px 20px;
+            background: #fff;
+            border: 2px solid #000;
+            border-radius: 10px;
+            box-shadow: 5px 5px 0 #000;
+            transition: all 0.3s;
+        }
+
+        .nav-links a:hover {
+            transform: translate(-3px, -3px);
+            box-shadow: 8px 8px 0 #000;
+            background: #ffff00;
+        }
+
+        /* Container principale */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Sezione Hero */
+        .hero {
+            background: radial-gradient(circle, #ff1493, #9400d3, #0000ff);
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+            border: 10px ridge #ffd700;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '★ ✦ ★ ✦ ★ ✦ ★ ✦ ★ ✦ ★ ✦ ★';
+            position: absolute;
+            top: 10px;
+            left: 0;
+            right: 0;
+            font-size: 2rem;
+            color: #ffd700;
+            animation: sparkle 2s infinite;
+        }
+
+        @keyframes sparkle {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.3;
+            }
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            text-shadow: 3px 3px 0 #000;
+            margin-bottom: 20px;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateY(0);
+            }
+
+            40% {
+                transform: translateY(-20px);
+            }
+
+            60% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 20px;
+            border: 3px dashed #fff;
+        }
+
+        /* Bottoni anni 90 */
+        .btn-90s {
+            font-family: 'Comic Neue', cursive;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #000;
+            background: linear-gradient(45deg, #ff6b35, #ffd23f);
+            border: 4px solid #000;
+            border-radius: 15px;
+            padding: 15px 30px;
+            cursor: pointer;
+            box-shadow: 6px 6px 0 #000;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            margin: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-90s::before {
+            content: '💾';
+            position: absolute;
+            left: -30px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2rem;
+            transition: left 0.3s;
+        }
+
+        .btn-90s:hover {
+            transform: translate(-3px, -3px);
+            box-shadow: 9px 9px 0 #000;
+            background: linear-gradient(45deg, #ffd23f, #ff6b35);
+        }
+
+        .btn-90s:hover::before {
+            left: 10px;
+        }
+
+        /* Cards con effetto 3D */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, #ff69b4, #ffd700, #00ced1);
+            border: 5px solid #000;
+            border-radius: 20px;
+            padding: 30px;
+            transform: perspective(1000px) rotateX(5deg);
+            box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transform: rotate(45deg);
+            animation: cardShine 4s infinite;
+        }
+
+        @keyframes cardShine {
+            0% {
+                transform: translateX(-100%) translateY(-100%) rotate(45deg);
+            }
+
+            100% {
+                transform: translateX(100%) translateY(100%) rotate(45deg);
+            }
+        }
+
+        .feature-card:hover {
+            transform: perspective(1000px) rotateX(0deg) scale(1.05);
+            box-shadow: 15px 15px 30px rgba(0, 0, 0, 0.7);
+        }
+
+        .feature-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            animation: iconBounce 3s infinite;
+        }
+
+        @keyframes iconBounce {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.2) rotate(10deg);
+            }
+        }
+
+        /* Sezione testimonial */
+        .testimonial {
+            background: #ff69b4;
+            border: 8px double #000;
+            border-radius: 25px;
+            padding: 40px;
+            margin: 50px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .testimonial::before {
+            content: '🗣️';
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 3rem;
+            background: #fff;
+            padding: 10px;
+            border: 3px solid #000;
+            border-radius: 50%;
+        }
+
+        /* Pricing section */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+
+        .pricing-card {
+            background: linear-gradient(45deg, #00ff00, #ffff00);
+            border: 6px solid #000;
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            transform: skew(-5deg);
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .pricing-card:nth-child(2) {
+            background: linear-gradient(45deg, #ff1493, #ffd700);
+            transform: skew(5deg) scale(1.1);
+            z-index: 2;
+        }
+
+        .pricing-card:hover {
+            transform: skew(0deg) scale(1.1);
+            animation: wiggle 0.5s;
+        }
+
+        @keyframes wiggle {
+
+            0%,
+            100% {
+                transform: skew(0deg) scale(1.1);
+            }
+
+            25% {
+                transform: skew(5deg) scale(1.1);
+            }
+
+            75% {
+                transform: skew(-5deg) scale(1.1);
+            }
+        }
+
+        .price {
+            font-family: 'Orbitron', monospace;
+            font-size: 3rem;
+            font-weight: 900;
+            color: #000080;
+            text-shadow: 2px 2px 0 #fff;
+        }
+
+        /* Newsletter con effetti speciali */
+        .newsletter {
+            background: radial-gradient(circle, #ff4500, #ffd700, #ff69b4);
+            border: 10px ridge #000;
+            border-radius: 30px;
+            padding: 50px;
+            margin: 50px 0;
+            text-align: center;
+            position: relative;
+            animation: pulse 3s infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.02);
+            }
+        }
+
+        .newsletter::before {
+            content: '🚀 NUOVO! 🚀';
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #ff0000;
+            color: #fff;
+            padding: 10px 20px;
+            border: 3px solid #000;
+            border-radius: 20px;
+            font-weight: bold;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+
+            0%,
+            50% {
+                opacity: 1;
+            }
+
+            51%,
+            100% {
+                opacity: 0.5;
+            }
+        }
+
+        .form-90s {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .input-90s {
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            border: 4px solid #000;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            font-family: 'Comic Neue', cursive;
+            background: linear-gradient(45deg, #fff, #f0f0f0);
+            box-shadow: inset 3px 3px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .input-90s:focus {
+            outline: none;
+            border-color: #ff00ff;
+            background: #ffff00;
+            animation: inputGlow 0.5s;
+        }
+
+        @keyframes inputGlow {
+            0% {
+                box-shadow: inset 3px 3px 5px rgba(0, 0, 0, 0.3);
+            }
+
+            100% {
+                box-shadow: inset 3px 3px 5px rgba(0, 0, 0, 0.3), 0 0 20px #ff00ff;
+            }
+        }
+
+        /* Footer retrò */
+        .footer {
+            background: linear-gradient(45deg, #000080, #4b0082);
+            color: #00ff00;
+            padding: 40px;
+            text-align: center;
+            border-top: 10px solid #ffd700;
+            position: relative;
+        }
+
+        .footer::before {
+            content: '© 1995-2025 GESTIONE INCASSI CORP.';
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #000;
+            color: #00ff00;
+            padding: 5px 15px;
+            border: 2px solid #00ff00;
+            font-family: 'Orbitron', monospace;
+        }
+
+        /* Effetti speciali */
+        .sparkles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        .sparkle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #fff;
+            border-radius: 50%;
+            animation: twinkle 2s infinite;
+        }
+
+        @keyframes twinkle {
+
+            0%,
+            100% {
+                opacity: 0;
+                transform: scale(0);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Cursore personalizzato */
+        body {
+            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><circle cx="10" cy="10" r="8" fill="%23ff00ff" stroke="%23000" stroke-width="2"/></svg>'), auto;
+        }
+
+        .btn-90s:hover {
+            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><polygon points="10,2 18,18 10,14 2,18" fill="%23ffd700" stroke="%23000" stroke-width="2"/></svg>'), auto;
+        }
+
+        /* Responsive design anni 90 */
+        @media (max-width: 768px) {
+            .neon-title {
+                font-size: 2rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Under construction banner */
+        .construction {
+            background: #ffff00;
+            color: #000;
+            text-align: center;
+            padding: 10px;
+            border: 3px solid #000;
+            margin: 20px 0;
+            animation: constructionBlink 1s infinite;
+        }
+
+        @keyframes constructionBlink {
+
+            0%,
+            50% {
+                background: #ffff00;
+            }
+
+            51%,
+            100% {
+                background: #ff0000;
+                color: #fff;
+            }
+        }
+
+        /* Sezione extra anni 90 */
+        .tech-specs {
+            background: #808080;
+            border: 5px solid #000;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            color: #fff;
+            text-shadow: 2px 2px 0 #000;
+        }
+
+        .visitor-counter {
+            background: #000;
+            color: #00ff00;
+            padding: 15px;
+            border: 3px solid #00ff00;
+            text-align: center;
+            font-family: 'Orbitron', monospace;
+            margin: 20px 0;
+        }
+
+        .webring {
+            background: #c0c0c0;
+            border: 2px inset #808080;
+            padding: 20px;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .guestbook {
+            background: #ffffcc;
+            border: 3px double #000;
+            padding: 20px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Effetti sparkle -->
+    <div class="sparkles" id="sparkles"></div>
+
+    <!-- Header -->
+    <header class="header">
+        <h1 class="neon-title">GESTIONE INCASSI</h1>
+        <p style="font-family: 'Orbitron', monospace; font-size: 1.2rem; margin-top: 10px;">
+            *** IL SOFTWARE DEL FUTURO È ARRIVATO! ***
+        </p>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="#home">🏠 HOME</a></li>
+            <li><a href="#features">⚡ FEATURES</a></li>
+            <li><a href="#pricing">💰 PREZZI</a></li>
+            <li><a href="#contact">📞 CONTATTI</a></li>
+        </ul>
+    </nav>
+
+    <!-- Under Construction Banner -->
+    <div class="construction">
+        <strong>🚧 WORK IN PROGRESS 🚧 SITO IN COSTRUZIONE 🚧 COMING SOON! 🚧</strong>
+    </div>
+
+    <!-- Contatore visitatori -->
+    <div class="visitor-counter">
+        <strong>VISITATORI DAL 1995: <span id="visitor-count">001337</span></strong><br>
+        <small>Tu sei il visitatore numero: <span id="current-visitor">1338</span>!</small>
+    </div>
+
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <h1>RIVOLUZIONA I TUOI INCASSI!</h1>
+            <p>
+                🔥 <strong>SUPER HOT!</strong> 🔥<br>
+                Il sistema più AVANZATO per gestire gli incassi!<br>
+                ✨ TEAM ILLIMITATO ✨ CONTROLLO TOTALE ✨ ZERO ERRORI ✨
+            </p>
+            <div style="margin: 30px 0;">
+                <div style="display: inline-block; margin: 0 20px; text-align: center;">
+                    <div style="font-size: 4rem; font-weight: bold; color: #ffd700;">∞</div>
+                    <div>UTENTI!</div>
+                </div>
+                <div style="display: inline-block; margin: 0 20px; text-align: center;">
+                    <div style="font-size: 4rem; font-weight: bold; color: #ffd700;">100%</div>
+                    <div>ACCURATO!</div>
+                </div>
+                <div style="display: inline-block; margin: 0 20px; text-align: center;">
+                    <div style="font-size: 4rem; font-weight: bold; color: #ffd700;">0</div>
+                    <div>ERRORI!</div>
+                </div>
+            </div>
+            <a href="#newsletter" class="btn-90s">
+                📢 ISCRIVITI ORA - 1° MESE GRATIS! 🎁
+            </a>
+        </section>
+
+        <!-- Specifiche tecniche -->
+        <section class="tech-specs">
+            <h2 style="text-align: center; color: #ffff00; font-size: 2.5rem; margin-bottom: 20px;">
+                🖥️ SPECIFICHE TECNICHE AVANZATE 🖥️
+            </h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+                <div style="text-align: center;">
+                    <h3>💾 SISTEMA</h3>
+                    <p>Windows 95/98<br>MS-DOS 6.22<br>OS/2 Warp</p>
+                </div>
+                <div style="text-align: center;">
+                    <h3>🔧 HARDWARE</h3>
+                    <p>386DX minimo<br>8MB RAM<br>VGA obbligatoria</p>
+                </div>
+                <div style="text-align: center;">
+                    <h3>🌐 RETE</h3>
+                    <p>Novell NetWare<br>TCP/IP<br>Modem 56k</p>
+                </div>
+                <div style="text-align: center;">
+                    <h3>💿 SUPPORTO</h3>
+                    <p>CD-ROM<br>Floppy 3.5"<br>Backup su DAT</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features">
+            <h2
+                style="text-align: center; font-size: 3rem; color: #000080; text-shadow: 3px 3px 0 #ffd700; margin: 50px 0;">
+                🌟 CARATTERISTICHE INCREDIBILI! 🌟
+            </h2>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">⏰</div>
+                    <h3>RISPARMIO TEMPO MEGA!</h3>
+                    <p>Automatizza TUTTO! Dimentica i controlli manuali e dedica il tempo ad altro. Il futuro è ORA!</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <h3>TEAM INFINITO!</h3>
+                    <p>TUTTI i tuoi dipendenti possono lavorare insieme! Nessun limite, solo POTENZA PURA!</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>CONTROLLO SUPREMO!</h3>
+                    <p>Traccia OGNI movimento! Contanti, POS, fatture - TUTTO sotto controllo assoluto!</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🔍</div>
+                    <h3>RICERCA TURBO!</h3>
+                    <p>Trova qualsiasi cosa in NANOSECONDI! Filtra, ordina, trova - la velocità della luce!</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>MOBILE POWER!</h3>
+                    <p>Funziona su TUTTO! Desktop, tablet, smartphone - ovunque tu sia, ci siamo anche noi!</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>REPORT AUTOMATICI!</h3>
+                    <p>Statistiche in tempo REALE! Totali, separazioni, controlli - tutto automatico!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonial -->
+        <section class="testimonial">
+            <h3 style="font-size: 2rem; margin-bottom: 20px;">💬 COSA DICONO I NOSTRI CLIENTI 💬</h3>
+            <p style="font-size: 1.3rem; font-style: italic; margin-bottom: 20px;">
+                "WOW! Non posso credere a quanto tempo sto risparmiando! Prima perdevo ORE ogni giorno,
+                ora tutto è automatico. I miei dipendenti sono FELICISSIMI e non abbiamo più errori!
+                È FANTASTICO!"
+            </p>
+            <div style="display: flex; align-items: center; justify-content: center; gap: 15px;">
+                <div
+                    style="width: 60px; height: 60px; background: #ff69b4; border: 3px solid #000; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem;">
+                    👩
+                </div>
+                <div>
+                    <strong>Alessandra Basso</strong><br>
+                    <small>Proprietaria Super Felice!</small>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing -->
+        <section id="pricing">
+            <h2
+                style="text-align: center; font-size: 3rem; color: #000080; text-shadow: 3px 3px 0 #ffd700; margin: 50px 0;">
+                💎 PIANI SUPER CONVENIENTI! 💎
+            </h2>
+
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>🥉 STARTER</h3>
+                    <div class="price">€29</div>
+                    <div>/mese</div>
+                    <ul style="list-style: none; padding: 20px 0;">
+                        <li>✅ 1 Admin</li>
+                        <li>✅ 2 Dipendenti</li>
+                        <li>✅ Gestione Base</li>
+                        <li>✅ Support Email</li>
+                    </ul>
+                    <a href="#" class="btn-90s">SCEGLI!</a>
+                </div>
+
+                <div class="pricing-card">
+                    <div
+                        style="position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: #ff0000; color: #fff; padding: 5px 15px; border: 3px solid #000; border-radius: 20px; font-weight: bold;">
+                        🔥 HOT! 🔥
+                    </div>
+                    <h3>🥈 PROFESSIONAL</h3>
+                    <div class="price">€49</div>
+                    <div>/mese</div>
+                    <ul style="list-style: none; padding: 20px 0;">
+                        <li>✅ 1 Admin</li>
+                        <li>✅ 100 Utenti!</li>
+                        <li>✅ Ricerca TURBO</li>
+                        <li>✅ Report Completi</li>
+                        <li>✅ Support VIP</li>
+                    </ul>
+                    <a href="#" class="btn-90s">VOGLIO QUESTO!</a>
+                </div>
+
+                <div class="pricing-card">
+                    <h3>🥇 ENTERPRISE</h3>
+                    <div class="price">€99</div>
+                    <div>/mese</div>
+                    <ul style="list-style: none; padding: 20px 0;">
+                        <li>✅ Utenti INFINITI</li>
+                        <li>✅ Personalizzazioni</li>
+                        <li>✅ API Super</li>
+                        <li>✅ Support 24/7</li>
+                    </ul>
+                    <a href="#" class="btn-90s">CONTATTACI!</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter -->
+        <section class="newsletter" id="newsletter">
+            <h2 style="font-size: 3rem; margin-bottom: 30px;">
+                🎁 ISCRIVITI E RICEVI 1 MESE GRATIS! 🎁
+            </h2>
+            <p style="font-size: 1.4rem; margin-bottom: 30px;">
+                Sii tra i PRIMI a provare il futuro della gestione incassi!<br>
+                <strong style="color: #ff0000;">OFFERTA LIMITATA!</strong> Solo per i primi 100 iscritti!
+            </p>
+
+            <form class="form-90s" onsubmit="handleSubmit90s(event)">
+                <input type="text" class="input-90s" placeholder="🙋‍♂️ Il tuo nome *" required>
+                <input type="email" class="input-90s" placeholder="📧 La tua email *" required>
+                <input type="tel" class="input-90s" placeholder="📞 Telefono">
+                <input type="text" class="input-90s" placeholder="🏢 Nome attività">
+                <select class="input-90s">
+                    <option value="">👥 Quanti dipendenti?</option>
+                    <option value="1-2">1-2 persone</option>
+                    <option value="3-5">3-5 persone</option>
+                    <option value="6-10">6-10 persone</option>
+                    <option value="11-50">11-50 persone</option>
+                    <option value="50+">50+ persone</option>
+                </select>
+                <button type="submit" class="btn-90s" style="width: 100%; margin-top: 20px;">
+                    🚀 ISCRIVITI ORA - GRATIS! 🚀
+                </button>
+            </form>
+
+            <p style="margin-top: 20px; font-size: 0.9rem;">
+                🔒 I tuoi dati sono SICURI! Niente spam, solo cose FANTASTICHE!
+            </p>
+        </section>
+
+        <!-- Guestbook -->
+        <section class="guestbook">
+            <h2 style="text-align: center; color: #000080; margin-bottom: 20px;">📝 FIRMA IL NOSTRO GUESTBOOK!</h2>
+            <div style="background: #fff; border: 2px inset #808080; padding: 15px; margin-bottom: 20px;">
+                <div style="border-bottom: 1px solid #ccc; padding: 10px 0;">
+                    <strong>Mario_95</strong> - 15/03/1998 14:32<br>
+                    <em>"Questo sito è MEGA! Non vedo l'ora di provare il software! 🔥"</em>
+                </div>
+                <div style="border-bottom: 1px solid #ccc; padding: 10px 0;">
+                    <strong>ComputerGuru</strong> - 12/03/1998 09:15<br>
+                    <em>"Finalmente un software serio per Windows 95! L33t! 💾"</em>
+                </div>
+                <div style="border-bottom: 1px solid #ccc; padding: 10px 0;">
+                    <strong>TechnoQueen</strong> - 10/03/1998 16:48<br>
+                    <em>"OMG questa grafica è spacca!! Quando esce?? 🌟"</em>
+                </div>
+            </div>
+            <div style="text-align: center;">
+                <a href="#" class="btn-90s" style="font-size: 1rem;">📝 AGGIUNGI IL TUO MESSAGGIO!</a>
+            </div>
+        </section>
+
+        <!-- WebRing -->
+        <section class="webring">
+            <h3>🌐 COOL SITES WEBRING 🌐</h3>
+            <p style="margin: 15px 0;">
+                <a href="#" style="color: #0000ff;">⬅️ Sito Precedente</a> |
+                <a href="#" style="color: #800080;">🏠 WebRing Home</a> |
+                <a href="#" style="color: #0000ff;">Sito Successivo ➡️</a>
+            </p>
+            <p style="font-size: 0.8rem;">
+                Questo sito fa parte del <strong>"Software Aziendale Ring"</strong><br>
+                <a href="#" style="color: #008000;">Unisciti anche tu!</a>
+            </p>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div style="margin-top: 40px;">
+            <h3 style="color: #ffd700;">📞 CONTATTACI SUBITO!</h3>
+            <p>
+                ☎️ +39 0424 066 922<br>
+                📧 info@gestioneincassi.cloud<br>
+                📠 Fax: +39 0424 066 923<br>
+                📟 Pager: 335-123-4567<br>
+                💬 ICQ: 12345678<br>
+                🌐 Homepage: http://www.gestioneincassi.com<br>
+                📂 FTP: ftp://ftp.gestioneincassi.com
+            </p>
+
+            <div style="margin: 30px 0; text-align: center;">
+                <img src="/api/placeholder/80/15" alt="Best viewed with Netscape" style="margin: 5px;">
+                <img src="/api/placeholder/80/15" alt="Powered by Windows 95" style="margin: 5px;">
+                <img src="/api/placeholder/80/15" alt="Made with HTML" style="margin: 5px;">
+                <img src="/api/placeholder/80/15" alt="Y2K Compliant" style="margin: 5px;">
+            </div>
+
+            <p style="margin-top: 30px; font-size: 0.9rem;">
+                Sviluppato con ❤️ nel 1995 (ma disponibile nel 2025!)<br>
+                <small>Questo sito è ottimizzato per Netscape Navigator 4.0+ e risoluzione 800x600</small>
+            </p>
+        </div>
+
+        <!-- Banner pubblicitari anni 90 -->
+        <div style="margin-top: 30px; text-align: center;">
+            <marquee behavior="scroll" direction="left" scrollamount="2" style="color: #ffff00;">
+                *** VISITA I NOSTRI SPONSOR *** GeoCities Hosting GRATIS *** Altavista Search Engine *** RealAudio
+                Player Download ***
+            </marquee>
+        </div>
+    </footer>
+
+    <!-- JavaScript anni 90 -->
+    <script>
+        // Crea effetto sparkle
+        function createSparkles() {
+            const sparklesContainer = document.getElementById('sparkles');
+            const colors = ['#fff', '#ffd700', '#ff69b4', '#00ced1', '#ff6b35'];
+
+            setInterval(() => {
+                const sparkle = document.createElement('div');
+                sparkle.className = 'sparkle';
+                sparkle.style.left = Math.random() * 100 + '%';
+                sparkle.style.top = Math.random() * 100 + '%';
+                sparkle.style.background = colors[Math.floor(Math.random() * colors.length)];
+                sparkle.style.animationDelay = Math.random() * 2 + 's';
+
+                sparklesContainer.appendChild(sparkle);
+
+                setTimeout(() => {
+                    sparkle.remove();
+                }, 2000);
+            }, 300);
+        }
+
+        // Gestione form anni 90
+        function handleSubmit90s(event) {
+            event.preventDefault();
+
+            const button = event.target.querySelector('button[type="submit"]');
+            const originalText = button.innerHTML;
+
+            button.innerHTML = '🎉 ISCRIZIONE COMPLETATA! 🎉';
+            button.style.background = 'linear-gradient(45deg, #00ff00, #ffff00)';
+            button.disabled = true;
+
+            // Alert anni 90
+            alert('FANTASTICO! Ti sei iscritto con successo!\n\nRiceverai una email di conferma entro 24 ore.\n\nGrazie per aver scelto GESTIONE INCASSI!\n\n🎉 IL FUTURO È TUO! 🎉');
+
+            // Reset dopo 5 secondi
+            setTimeout(() => {
+                button.innerHTML = originalText;
+                button.style.background = 'linear-gradient(45deg, #ff6b35, #ffd23f)';
+                button.disabled = false;
+                event.target.reset();
+            }, 5000);
+        }
+
+        // Contatore visitatori animato
+        function animateCounter() {
+            const counter = document.getElementById('visitor-count');
+            const currentVisitor = document.getElementById('current-visitor');
+            let count = 1337;
+
+            setInterval(() => {
+                count += Math.floor(Math.random() * 3) + 1;
+                counter.textContent = String(count).padStart(6, '0');
+                currentVisitor.textContent = count + 1;
+            }, 5000);
+        }
+
+        // Effetti audio simulati (per browsers che supportano)
+        function playSound() {
+            // Simula suoni anni 90
+            if (window.navigator && window.navigator.vibrate) {
+                window.navigator.vibrate(100);
+            }
+        }
+
+        // Aggiungi effetti interattivi
+        document.querySelectorAll('.feature-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                const icon = card.querySelector('.feature-icon');
+                icon.style.transform = 'scale(1.3) rotate(15deg)';
+                playSound();
+            });
+
+            card.addEventListener('mouseleave', () => {
+                const icon = card.querySelector('.feature-icon');
+                icon.style.transform = 'scale(1) rotate(0deg)';
+            });
+        });
+
+        // Messaggio di benvenuto anni 90
+        function showWelcomeMessage() {
+            const messages = [
+                '🌟 Benvenuto nel FUTURO! 🌟',
+                '💻 Hai scelto il MEGLIO! 💻',
+                '🚀 Preparati a VOLARE! 🚀',
+                '⚡ La RIVOLUZIONE inizia ORA! ⚡'
+            ];
+
+            const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+
+            setTimeout(() => {
+                alert(randomMessage + '\n\nQuesto sito utilizza la tecnologia più avanzata del 1995!\n\nBuona navigazione!');
+            }, 2000);
+        }
+
+        // Status bar message (simulato)
+        function updateStatusBar() {
+            const messages = [
+                '🌐 Connesso a Internet...',
+                '💾 Caricamento completato!',
+                '🔥 Sito MEGA caricato!',
+                '⚡ Pronto per il FUTURO!',
+                '🎯 Ultima tecnologia attiva!'
+            ];
+
+            let messageIndex = 0;
+            setInterval(() => {
+                // Simula cambio messaggio nella status bar
+                console.log(messages[messageIndex]);
+                messageIndex = (messageIndex + 1) % messages.length;
+            }, 3000);
+        }
+
+        // Inizializza tutto quando la pagina è caricata
+        window.onload = function () {
+            createSparkles();
+            animateCounter();
+            showWelcomeMessage();
+            updateStatusBar();
+
+            // Easter egg: Konami Code
+            let konamiCode = [];
+            const konamiSequence = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65]; // ↑↑↓↓←→←→BA
+
+            document.addEventListener('keydown', function (e) {
+                konamiCode.push(e.keyCode);
+                if (konamiCode.length > konamiSequence.length) {
+                    konamiCode.shift();
+                }
+
+                if (konamiCode.join(',') === konamiSequence.join(',')) {
+                    alert('🎮 KONAMI CODE ATTIVATO! 🎮\n\nHai sbloccato la modalità HACKER!\n\nOra hai accesso a tutte le funzioni segrete!');
+                    document.body.style.filter = 'hue-rotate(180deg)';
+                    setTimeout(() => {
+                        document.body.style.filter = 'none';
+                    }, 5000);
+                }
+            });
+        };
+
+        // Simula il famoso "This page is best viewed with..." 
+        function checkBrowser() {
+            const userAgent = navigator.userAgent;
+            if (userAgent.indexOf('Netscape') === -1 && userAgent.indexOf('Mozilla') === -1) {
+                alert('⚠️ ATTENZIONE! ⚠️\n\nQuesto sito è ottimizzato per Netscape Navigator 4.0+\n\nPer una migliore esperienza, scarica Netscape dal sito ufficiale!\n\nwww.netscape.com');
+            }
+        }
+
+        // Controlla browser dopo 1 secondo
+        setTimeout(checkBrowser, 1000);
+
+        // Simula dialogo di download
+        function simulateDownload(filename) {
+            alert('💾 DOWNLOAD INIZIATO!\n\nFile: ' + filename + '\nDimensione: ' + (Math.random() * 10 + 1).toFixed(1) + ' MB\n\nTempo stimato: ' + Math.floor(Math.random() * 45 + 5) + ' minuti\n\n📞 Ricorda di non usare il telefono durante il download!');
+        }
+
+        // Scroll automatico per il marquee
+        setInterval(() => {
+            const marquees = document.querySelectorAll('marquee');
+            marquees.forEach(marquee => {
+                // Simula refresh del contenuto marquee
+                if (Math.random() > 0.95) {
+                    const originalText = marquee.innerHTML;
+                    marquee.innerHTML = '*** AGGIORNAMENTO *** ' + originalText;
+                    setTimeout(() => {
+                        marquee.innerHTML = originalText;
+                    }, 3000);
+                }
+            });
+        }, 10000);
+    </script>
+
+    <!-- Hidden counter per statistiche -->
+    <img src="/api/placeholder/1/1" alt="" style="display: none;" id="tracking-pixel">
+
+    <!-- Commenti HTML anni 90 -->
+    <!-- 
+    ====================================
+    GESTIONE INCASSI v1.0 
+    Copyright 1995-1998
+    Best viewed with Netscape Navigator
+    Optimized for 800x600 resolution
+    Requires 8MB RAM minimum
+    ====================================
+    -->
+
+</body>
+
+</html>

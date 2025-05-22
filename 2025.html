@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestione Incassi</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #497e76;
+            --secondary-color: #faf9f6;
+            --accent-color: #0d6efd;
+            --text-dark: #141414;
+            --text-muted: #8f8f8f;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #5a8f87 100%);
+            color: white;
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            border: 1px solid #f0f0f0;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-color), #5a8f87);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .screenshot-placeholder {
+            background: var(--secondary-color);
+            border: 2px dashed #ddd;
+            border-radius: 12px;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .screenshot-placeholder:hover {
+            border-color: var(--primary-color);
+        }
+
+        .btn-warning-custom {
+            background: #ffc107;
+            border: none;
+            color: #000;
+            padding: 15px 35px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 193, 7, 0.4);
+        }
+
+        .btn-warning-custom:hover {
+            background: #ffb300;
+            color: #000;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 193, 7, 0.6);
+        }
+
+        .testimonial-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .pricing-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid #f0f0f0;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .pricing-card.featured {
+            border: 2px solid var(--primary-color);
+            transform: scale(1.05);
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .pricing-card.featured:hover {
+            transform: scale(1.05) translateY(-10px);
+        }
+
+        .badge-featured {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary-color);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        .text-primary-custom {
+            color: var(--primary-color) !important;
+        }
+
+        .bg-light-custom {
+            background-color: var(--secondary-color) !important;
+        }
+
+        .newsletter-form {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .form-control-custom {
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            padding: 12px 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-control-custom:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 0.2rem rgba(73, 126, 118, 0.25);
+        }
+
+        .stats-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            line-height: 1;
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .animate-on-scroll.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-primary-custom" href="#">
+                <i class="fas fa-euro-sign me-2"></i>Gestione Incassi
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 hero-content">
+                    <h1 class="display-4 fw-bold mb-4 animate-on-scroll">
+                        Gestisci i tuoi incassi in modo <span class="text-warning">intelligente</span>
+                    </h1>
+                    <p class="lead mb-4 animate-on-scroll">
+                        Il sistema che semplifica la gestione quotidiana degli incassi.
+                        <strong>Team illimitato</strong> che lavora in contemporanea, con controllo totale e risparmio
+                        di tempo garantito.
+                    </p>
+                    <div class="d-flex gap-3 mb-5 animate-on-scroll">
+                        <div class="text-center">
+                            <div class="stats-number text-white">∞</div>
+                            <small>Utenti simultanei</small>
+                        </div>
+                        <div class="text-center">
+                            <div class="stats-number text-white">100%</div>
+                            <small>Controllo accurato</small>
+                        </div>
+                        <div class="text-center">
+                            <div class="stats-number text-white">0</div>
+                            <small>Errori nei conti</small>
+                        </div>
+                    </div>
+                    <button class="btn btn-warning-custom animate-on-scroll mb-4" onclick="scrollToNewsletter()">
+                        <i class="fas fa-bell me-2"></i>Notificami al lancio - GRATIS per 1 mese
+                    </button>
+                </div>
+                <div class="col-lg-6">
+                    <div class="screenshot-placeholder animate-on-scroll">
+                        <div class="text-center">
+                            <i class="fas fa-desktop fa-3x mb-3"></i>
+                            <h5>Screenshot Dashboard Principale</h5>
+                            <p class="mb-0">Interfaccia intuitiva per la gestione quotidiana</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center mb-5">
+                    <h2 class="display-5 fw-bold mb-3 animate-on-scroll">Perché Gestione Incassi?</h2>
+                    <p class="lead text-muted animate-on-scroll">
+                        Nato dall'esperienza reale di chi gestisce incassi quotidianamente
+                    </p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card animate-on-scroll">
+                        <div class="feature-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h4 class="mb-3">Risparmio di Tempo</h4>
+                        <p class="text-muted">
+                            Automatizza i controlli manuali e riduci significativamente il tempo dedicato alla gestione
+                            degli incassi.
+                            Tutto sotto controllo con pochi clic.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card animate-on-scroll">
+                        <div class="feature-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h4 class="mb-3">Team Illimitato</h4>
+                        <p class="text-muted">
+                            Tutti i tuoi dipendenti possono lavorare contemporaneamente sul sistema.
+                            Nessun limite al numero di utenti, ognuno con i propri accessi personalizzati.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card animate-on-scroll">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h4 class="mb-3">Controllo Totale</h4>
+                        <p class="text-muted">
+                            Tracciamento completo di ogni movimento: contanti, POS, fatture e scontrini.
+                            Mai più discrepanze nei conti.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card animate-on-scroll">
+                        <div class="feature-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h4 class="mb-3">Ricerca Avanzata</h4>
+                        <p class="text-muted">
+                            Trova qualsiasi transazione in secondi. Filtra per data, tipo, importo o descrizione.
+                            I tuoi dati sempre a portata di clic.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card animate-on-scroll">
+                        <div class="feature-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h4 class="mb-3">Accesso Ovunque</h4>
+                        <p class="text-muted">
+                            Interfaccia responsive per desktop, tablet e smartphone.
+                            Gestisci i tuoi incassi da qualsiasi dispositivo.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card animate-on-scroll">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h4 class="mb-3">Report Automatici</h4>
+                        <p class="text-muted">
+                            Totali giornalieri automatici, separazione contanti/POS,
+                            e controllo cassa sempre aggiornato in tempo reale.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screenshots Section -->
+    <section class="section-padding bg-light-custom">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center mb-5">
+                    <h2 class="display-5 fw-bold mb-3 animate-on-scroll">Interfaccia Semplice e Potente</h2>
+                    <p class="lead text-muted animate-on-scroll">
+                        Progettata per essere utilizzata da chiunque, senza formazione
+                    </p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="screenshot-placeholder animate-on-scroll">
+                        <div class="text-center">
+                            <i class="fas fa-plus-circle fa-3x mb-3"></i>
+                            <h5>Form di Inserimento</h5>
+                            <p class="mb-0">Interfaccia intuitiva per inserire nuovi incassi</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="screenshot-placeholder animate-on-scroll">
+                        <div class="text-center">
+                            <i class="fas fa-table fa-3x mb-3"></i>
+                            <h5>Tabella Incassi</h5>
+                            <p class="mb-0">Vista completa con modifica in linea</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="screenshot-placeholder animate-on-scroll">
+                        <div class="text-center">
+                            <i class="fas fa-search fa-3x mb-3"></i>
+                            <h5>Ricerca Avanzata</h5>
+                            <p class="mb-0">Filtri potenti per trovare ogni transazione</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="screenshot-placeholder animate-on-scroll">
+                        <div class="text-center">
+                            <i class="fas fa-mobile-alt fa-3x mb-3"></i>
+                            <h5>Versione Mobile</h5>
+                            <p class="mb-0">Perfetta su smartphone e tablet</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="testimonial-card text-center animate-on-scroll">
+                        <div class="mb-4">
+                            <i class="fas fa-quote-left fa-2x text-primary-custom"></i>
+                        </div>
+                        <p class="lead mb-4">
+                            "Prima perdevo molto tempo ogni giorno solo per controllare gli incassi. Adesso con Gestione
+                            Incassi
+                            tutto è automatico e posso dedicare quel tempo ad altro. I miei dipendenti si trovano
+                            benissimo
+                            e non abbiamo più errori nei conti. È stato un investimento che si è ripagato subito!"
+                        </p>
+                        <div class="d-flex align-items-center justify-content-center gap-3">
+                            <div class="bg-primary-custom text-white rounded-circle d-flex align-items-center justify-content-center"
+                                style="width: 50px; height: 50px;">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="text-start">
+                                <h6 class="mb-0 fw-bold">Alessandra Basso</h6>
+                                <small class="text-muted">Proprietaria, Agenzia Bassanese</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="section-padding bg-light-custom">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center mb-5">
+                    <h2 class="display-5 fw-bold mb-3 animate-on-scroll">Piani di Abbonamento</h2>
+                    <p class="lead text-muted animate-on-scroll">
+                        Scegli il piano perfetto per la tua attività
+                    </p>
+                </div>
+            </div>
+            <div class="row justify-content-center g-4">
+                <div class="col-lg-4">
+                    <div class="pricing-card text-center animate-on-scroll">
+                        <h4 class="mb-3">Starter</h4>
+                        <div class="mb-4">
+                            <span class="stats-number">€29</span>
+                            <small class="text-muted">/mese</small>
+                        </div>
+                        <ul class="list-unstyled mb-4">
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>1 Utente Admin</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>2 Utenti Dipendenti</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Gestione Base</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Supporto Email</li>
+                        </ul>
+                        <button class="btn btn-outline-primary w-100">Scegli Starter</button>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="pricing-card text-center featured animate-on-scroll">
+                        <div class="badge-featured">Più Popolare</div>
+                        <h4 class="mb-3">Professional</h4>
+                        <div class="mb-4">
+                            <span class="stats-number">€49</span>
+                            <small class="text-muted">/mese</small>
+                        </div>
+                        <ul class="list-unstyled mb-4">
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>1 Utente Admin</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Fino a 100 Utenti</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Ricerca Avanzata</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Report Completi</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Supporto Prioritario</li>
+                        </ul>
+                        <button class="btn btn-warning-custom w-100">Scegli Professional</button>
+
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="pricing-card text-center animate-on-scroll">
+                        <h4 class="mb-3">Enterprise</h4>
+                        <div class="mb-4">
+                            <span class="stats-number">€99</span>
+                            <small class="text-muted">/mese</small>
+                        </div>
+                        <ul class="list-unstyled mb-4">
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Utenti Illimitati</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Personalizzazioni</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>API Integration</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Supporto Dedicato</li>
+                        </ul>
+                        <button class="btn btn-outline-primary w-100">Contattaci</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="section-padding newsletter-highlight" id="newsletter">
+        <div class="container newsletter-content">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <div class="mb-4">
+                        <i class="fas fa-gift fa-3x mb-3"></i>
+                    </div>
+                    <h2 class="display-5 fw-bold mb-3 animate-on-scroll">Resta Aggiornato - PRIMO MESE GRATIS!</h2>
+                    <p class="lead mb-5 animate-on-scroll">
+                        Iscriviti per ricevere una notifica quando Gestione Incassi sarà disponibile.
+                        <strong>Primo mese completamente gratuito</strong> per i primi iscritti!
+                    </p>
+                    <form class="newsletter-form animate-on-scroll" onsubmit="handleNewsletterSubmit(event)">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <input type="text" class="form-control form-control-custom" placeholder="Il tuo nome *"
+                                    required>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="email" class="form-control form-control-custom"
+                                    placeholder="La tua email *" required>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="tel" class="form-control form-control-custom"
+                                    placeholder="Numero di telefono">
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control form-control-custom"
+                                    placeholder="Nome della tua attività">
+                            </div>
+                            <div class="col-12">
+                                <select class="form-control form-control-custom">
+                                    <option value="">Quanti dipendenti gestiscono gli incassi?</option>
+                                    <option value="1-2">1-2 persone</option>
+                                    <option value="3-5">3-5 persone</option>
+                                    <option value="6-10">6-10 persone</option>
+                                    <option value="11-50">11-50 persone</option>
+                                    <option value="50+">50+ persone</option>
+                                </select>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-warning-custom btn-lg px-5">
+                                    <i class="fas fa-bell me-2"></i>ISCRIVITI ORA - 1° MESE GRATIS
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                    <p class="small mt-4 opacity-75">
+                        <i class="fas fa-lock me-1"></i>I tuoi dati sono al sicuro. Niente spam, solo aggiornamenti
+                        importanti.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h5 class="text-warning mb-3">
+                        <i class="fas fa-euro-sign me-2"></i>Gestione Incassi
+                    </h5>
+                    <p class="text-white">
+                        Il sistema di gestione incassi che fa risparmiare tempo e garantisce controllo totale.
+                        Sviluppato da professionisti per professionisti.
+                    </p>
+                </div>
+                <div class="col-lg-6">
+                    <h5 class="text-warning mb-3">Contatti</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-phone-alt me-2"></i>+39 0424 066 922</li>
+                        <li><i class="fas fa-envelope me-2"></i>
+                            <a href="mailto:info@gestioneincassi.cloud"
+                                class="text-white">info@gestioneincassi.cloud</a>
+                        </li>
+                    </ul>
+                </div>
+                <hr class="my-4">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <p class="small mb-0">&copy; 2025 Gestione Incassi. Tutti i diritti riservati.</p>
+                    </div>
+                    <div class="col-lg-6 text-lg-end">
+                        <a href="#" class="text-muted small me-3">Privacy Policy</a>
+                        <a href="#" class="text-muted small">Termini di Servizio</a>
+                    </div>
+                </div>
+            </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animated');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scroll to newsletter
+        function scrollToNewsletter() {
+            document.getElementById('newsletter').scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+
+        // Newsletter form submission
+        function handleNewsletterSubmit(event) {
+            event.preventDefault();
+
+            // Here you would typically send the data to your backend
+            const formData = new FormData(event.target);
+
+            // Show success message
+            const button = event.target.querySelector('button[type="submit"]');
+            const originalText = button.innerHTML;
+
+            button.innerHTML = '<i class="fas fa-check me-2"></i>Iscrizione Completata!';
+            button.classList.remove('btn-primary-custom');
+            button.classList.add('btn-success');
+            button.disabled = true;
+
+            // Reset form after 3 seconds
+            setTimeout(() => {
+                button.innerHTML = originalText;
+                button.classList.remove('btn-success');
+                button.classList.add('btn-primary-custom');
+                button.disabled = false;
+                event.target.reset();
+            }, 3000);
+        }
+
+        // Add some interactive effects
+        document.querySelectorAll('.feature-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                const icon = card.querySelector('.feature-icon');
+                icon.style.transform = 'scale(1.1) rotate(5deg)';
+            });
+
+            card.addEventListener('mouseleave', () => {
+                const icon = card.querySelector('.feature-icon');
+                icon.style.transform = 'scale(1) rotate(0deg)';
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,958 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<TITLE>GESTIONE INCASSI - Software Y2K Ready per Windows 98!</TITLE>
+<META NAME="description" CONTENT="Software aziendale Y2K compliant per gestione incassi. Compatibile Windows 98, NT 4.0, supporto Internet Explorer 4.0">
+<META NAME="keywords" CONTENT="gestione incassi, y2k, windows 98, internet explorer, active desktop, software aziendale">
+<META NAME="author" CONTENT="GESTIONE INCASSI Corp.">
+<META NAME="robots" CONTENT="index,follow">
+<META NAME="copyright" CONTENT="1997 GESTIONE INCASSI Corp.">
+
+<!-- CSS integrato per la formattazione -->
+<STYLE TYPE="text/css">
+<!--
+BODY { background-color: #FFFFFF; font-family: Arial, Helvetica, sans-serif; margin: 0; }
+H1 { color: #000080; text-align: center; font-size: 24pt; }
+H2 { color: #800000; font-size: 18pt; }
+H3 { color: #008000; font-size: 14pt; }
+.header { background-color: #C0C0C0; border: 2px outset; padding: 10px; }
+.navigation { background-color: #FFFF00; text-align: center; padding: 5px; }
+.content { margin: 10px; }
+.highlight { background-color: #FFFF00; font-weight: bold; }
+.price { color: #FF0000; font-size: 16pt; font-weight: bold; }
+.new { color: #FF0000; font-weight: bold; blink: blink; }
+.footer { background-color: #808080; color: #FFFFFF; text-align: center; padding: 10px; }
+.testimonial { background-color: #F0F0F0; border: 1px solid #808080; padding: 10px; margin: 5px; }
+.warning { background-color: #FF0000; color: #FFFFFF; font-weight: bold; text-align: center; padding: 5px; }
+-->
+</STYLE>
+
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+// JavaScript per effetti dinamici
+function showAlert() {
+    alert("Benvenuto nel futuro della gestione aziendale!");
+}
+
+function validateForm() {
+    var email = document.forms["orderForm"]["email"].value;
+    if (email == "") {
+        alert("Inserire un indirizzo email valido!");
+        return false;
+    }
+    return true;
+}
+
+function changeColor(element, color) {
+    element.style.backgroundColor = color;
+}
+
+var visitCount = 0;
+function updateCounter() {
+    visitCount++;
+    document.getElementById("counter").innerHTML = "Visita numero: " + visitCount;
+}
+
+// Orologio dinamico
+function showTime() {
+    var date = new Date();
+    var time = date.toLocaleTimeString();
+    document.getElementById("clock").innerHTML = "Ora: " + time;
+    setTimeout(showTime, 1000);
+}
+-->
+</SCRIPT>
+
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#800080" ALINK="#FF0000" 
+      onLoad="showAlert(); showTime(); updateCounter();">
+
+<!-- Intestazione con grafica avanzata -->
+<DIV CLASS="header">
+<CENTER>
+<TABLE WIDTH="100%" CELLPADDING="0" CELLSPACING="0">
+<TR>
+<TD WIDTH="20%">
+<IMG SRC="/api/placeholder/100/80" ALT="Logo Y2K Ready" ALIGN="LEFT" BORDER="0" HSPACE="5">
+</TD>
+<TD WIDTH="60%" ALIGN="CENTER">
+<H1>GESTIONE INCASSI</H1>
+<FONT SIZE="+2" COLOR="#FF0000"><B>Software Professionale Anno 2000</B></FONT><BR>
+<SPAN CLASS="new">*** NUOVA VERSIONE 3.0 - Y2K COMPLIANT! ***</SPAN>
+</TD>
+<TD WIDTH="20%" ALIGN="RIGHT">
+<IMG SRC="/api/placeholder/100/80" ALT="Windows 98 Compatible" ALIGN="RIGHT" BORDER="0" HSPACE="5">
+</TD>
+</TR>
+</TABLE>
+</CENTER>
+</DIV>
+
+<!-- Banner warning Y2K -->
+<DIV CLASS="warning">
+<MARQUEE BEHAVIOR="scroll" DIRECTION="left" SCROLLAMOUNT="3">
+🚨 ATTENZIONE: Solo software Y2K COMPLIANT garantiscono funzionamento dopo il 1° Gennaio 2000! 🚨
+</MARQUEE>
+</DIV>
+
+<!-- Navigazione con effetti hover -->
+<DIV CLASS="navigation">
+<TABLE BORDER="1" CELLPADDING="8" CELLSPACING="0" WIDTH="100%">
+<TR BGCOLOR="#FFFF00">
+<TD ALIGN="CENTER" onMouseOver="changeColor(this, '#FF69B4')" onMouseOut="changeColor(this, '#FFFF00')">
+<A HREF="#home"><FONT SIZE="+1"><B>🏠 HOME</B></FONT></A>
+</TD>
+<TD ALIGN="CENTER" onMouseOver="changeColor(this, '#FF69B4')" onMouseOut="changeColor(this, '#FFFF00')">
+<A HREF="#features"><FONT SIZE="+1"><B>⚡ FEATURES</B></FONT></A>
+</TD>
+<TD ALIGN="CENTER" onMouseOver="changeColor(this, '#FF69B4')" onMouseOut="changeColor(this, '#FFFF00')">
+<A HREF="#gallery"><FONT SIZE="+1"><B>📸 GALLERY</B></FONT></A>
+</TD>
+<TD ALIGN="CENTER" onMouseOver="changeColor(this, '#FF69B4')" onMouseOut="changeColor(this, '#FFFF00')">
+<A HREF="#prices"><FONT SIZE="+1"><B>💰 PREZZI</B></FONT></A>
+</TD>
+<TD ALIGN="CENTER" onMouseOver="changeColor(this, '#FF69B4')" onMouseOut="changeColor(this, '#FFFF00')">
+<A HREF="#download"><FONT SIZE="+1"><B>💾 DOWNLOAD</B></FONT></A>
+</TD>
+<TD ALIGN="CENTER" onMouseOver="changeColor(this, '#FF69B4')" onMouseOut="changeColor(this, '#FFFF00')">
+<A HREF="#contact"><FONT SIZE="+1"><B>📞 CONTATTI</B></FONT></A>
+</TD>
+</TR>
+</TABLE>
+</DIV>
+
+<!-- Informazioni dinamiche -->
+<TABLE WIDTH="100%" BGCOLOR="#E0E0E0">
+<TR>
+<TD WIDTH="70%" ALIGN="LEFT">
+<FONT SIZE="-1">🌐 Ottimizzato per Internet Explorer 4.0 con Active Desktop</FONT>
+</TD>
+<TD WIDTH="30%" ALIGN="RIGHT">
+<FONT SIZE="-1" ID="clock">Caricamento orario...</FONT>
+</TD>
+</TR>
+</TABLE>
+
+<HR SIZE="3" COLOR="#800000">
+
+<!-- Sezione principale con Java Applet simulata -->
+<A NAME="home"></A>
+<DIV CLASS="content">
+<CENTER>
+<TABLE BORDER="2" CELLPADDING="15" BGCOLOR="#F0F8FF" WIDTH="90%">
+<TR>
+<TD ALIGN="CENTER">
+<H2>🚀 IL FUTURO È QUI! 🚀</H2>
+<FONT SIZE="+1">Rivoluziona la tua azienda con il software più avanzato del pianeta!</FONT>
+
+<!-- Simulazione Java Applet -->
+<P>
+<TABLE BORDER="1" BGCOLOR="#C0C0C0" CELLPADDING="10">
+<TR>
+<TD ALIGN="CENTER">
+<FONT SIZE="-1" COLOR="#808080">Java Applet - Demo Interattiva</FONT><BR>
+<IMG SRC="/api/placeholder/300/200" ALT="Demo Interattiva Java" BORDER="1"><BR>
+<FONT SIZE="-2">Requires Java 1.1 - <A HREF="http://java.sun.com">Download Java Runtime</A></FONT>
+</TD>
+</TR>
+</TABLE>
+</P>
+
+<TABLE BORDER="3" CELLPADDING="10" BGCOLOR="#FFFFFF">
+<TR>
+<TD ALIGN="CENTER" BGCOLOR="#00FF00">
+<FONT SIZE="+2" COLOR="#000080"><B>∞</B></FONT><BR>
+<FONT SIZE="-1">UTENTI<BR>SIMULTANEI</FONT>
+</TD>
+<TD ALIGN="CENTER" BGCOLOR="#FFFF00">
+<FONT SIZE="+2" COLOR="#FF0000"><B>100%</B></FONT><BR>
+<FONT SIZE="-1">Y2K<BR>COMPLIANT</FONT>
+</TD>
+<TD ALIGN="CENTER" BGCOLOR="#FF69B4">
+<FONT SIZE="+2" COLOR="#000080"><B>0</B></FONT><BR>
+<FONT SIZE="-1">ERRORI<BR>POSSIBILI</FONT>
+</TD>
+<TD ALIGN="CENTER" BGCOLOR="#00FFFF">
+<FONT SIZE="+2" COLOR="#800000"><B>24/7</B></FONT><BR>
+<FONT SIZE="-1">SUPPORTO<BR>ONLINE</FONT>
+</TD>
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+</CENTER>
+</DIV>
+
+<HR SIZE="2" COLOR="#008000">
+
+<!-- Caratteristiche con layout avanzato -->
+<A NAME="features"></A>
+<DIV CLASS="content">
+<H2>🌟 Caratteristiche Rivoluzionarie</H2>
+
+<TABLE BORDER="0" CELLPADDING="10" WIDTH="100%">
+<TR>
+<TD WIDTH="50%" VALIGN="TOP">
+
+<TABLE BORDER="2" CELLPADDING="8" BGCOLOR="#FFFACD">
+<TR BGCOLOR="#DAA520">
+<TD ALIGN="CENTER">
+<FONT COLOR="#FFFFFF" SIZE="+1"><B>💻 Tecnologia 32-bit</B></FONT>
+</TD>
+</TR>
+<TR>
+<TD>
+<IMG SRC="/api/placeholder/80/80" ALT="32-bit Icon" ALIGN="LEFT" HSPACE="5" VSPACE="5">
+<UL>
+<LI><B>Ottimizzato per Pentium II</B></LI>
+<LI>Supporto MMX completo</LI>
+<LI>DirectX 5.0 integrato</LI>
+<LI>ActiveX Controls</LI>
+<LI>COM/DCOM compatible</LI>
+</UL>
+</TD>
+</TR>
+</TABLE>
+
+<P>
+
+<TABLE BORDER="2" CELLPADDING="8" BGCOLOR="#F0FFFF">
+<TR BGCOLOR="#4682B4">
+<TD ALIGN="CENTER">
+<FONT COLOR="#FFFFFF" SIZE="+1"><B>🌐 Internet Ready</B></FONT>
+</TD>
+</TR>
+<TR>
+<TD>
+<IMG SRC="/api/placeholder/80/80" ALT="Internet Icon" ALIGN="LEFT" HSPACE="5" VSPACE="5">
+<UL>
+<LI><B>Browser integrato IE 4.0</B></LI>
+<LI>HTML Help System</LI>
+<LI>Auto-update via Internet</LI>
+<LI>E-mail automatiche</LI>
+<LI>FTP upload reports</LI>
+</UL>
+</TD>
+</TR>
+</TABLE>
+
+</TD>
+<TD WIDTH="50%" VALIGN="TOP">
+
+<TABLE BORDER="2" CELLPADDING="8" BGCOLOR="#FFF8DC">
+<TR BGCOLOR="#CD853F">
+<TD ALIGN="CENTER">
+<FONT COLOR="#FFFFFF" SIZE="+1"><B>🔒 Sicurezza Avanzata</B></FONT>
+</TD>
+</TR>
+<TR>
+<TD>
+<IMG SRC="/api/placeholder/80/80" ALT="Security Icon" ALIGN="LEFT" HSPACE="5" VSPACE="5">
+<UL>
+<LI><B>Crittografia RSA 128-bit</B></LI>
+<LI>Smart Card support</LI>
+<LI>Biometric authentication</LI>
+<LI>NT Domain integration</LI>
+<LI>SSL/TLS protocols</LI>
+</UL>
+</TD>
+</TR>
+</TABLE>
+
+<P>
+
+<TABLE BORDER="2" CELLPADDING="8" BGCOLOR="#F5FFFA">
+<TR BGCOLOR="#2E8B57">
+<TD ALIGN="CENTER">
+<FONT COLOR="#FFFFFF" SIZE="+1"><B>📊 Database Enterprise</B></FONT>
+</TD>
+</TR>
+<TR>
+<TD>
+<IMG SRC="/api/placeholder/80/80" ALT="Database Icon" ALIGN="LEFT" HSPACE="5" VSPACE="5">
+<UL>
+<LI><B>SQL Server 7.0 Ready</B></LI>
+<LI>Oracle 8i compatible</LI>
+<LI>ODBC 3.5 certified</LI>
+<LI>Transaction logging</LI>
+<LI>Hot backup system</LI>
+</UL>
+</TD>
+</TR>
+</TABLE>
+
+</TD>
+</TR>
+</TABLE>
+</DIV>
+
+<HR SIZE="2" COLOR="#800080">
+
+<!-- Gallery Screenshots -->
+<A NAME="gallery"></A>
+<DIV CLASS="content">
+<H2>📸 Screenshot Gallery - Interface Windows 98</H2>
+
+<CENTER>
+<TABLE BORDER="3" CELLPADDING="8" CELLSPACING="4">
+<TR>
+<TD BGCOLOR="#C0C0C0" ALIGN="CENTER">
+<IMG SRC="/api/placeholder/250/180" ALT="Main Interface" BORDER="1"><BR>
+<FONT SIZE="-1"><B>Interfaccia Principale</B><BR>
+Design Windows 98 nativo</FONT>
+</TD>
+<TD BGCOLOR="#C0C0C0" ALIGN="CENTER">
+<IMG SRC="/api/placeholder/250/180" ALT="Data Entry" BORDER="1"><BR>
+<FONT SIZE="-1"><B>Form di Inserimento</B><BR>
+Wizard guidato intelligente</FONT>
+</TD>
+<TD BGCOLOR="#C0C0C0" ALIGN="CENTER">
+<IMG SRC="/api/placeholder/250/180" ALT="Reports" BORDER="1"><BR>
+<FONT SIZE="-1"><B>Sistema Report</B><BR>
+Crystal Reports integrato</FONT>
+</TD>
+</TR>
+<TR>
+<TD BGCOLOR="#C0C0C0" ALIGN="CENTER">
+<IMG SRC="/api/placeholder/250/180" ALT="Network" BORDER="1"><BR>
+<FONT SIZE="-1"><B>Configurazione Rete</B><BR>
+TCP/IP auto-configuration</FONT>
+</TD>
+<TD BGCOLOR="#C0C0C0" ALIGN="CENTER">
+<IMG SRC="/api/placeholder/250/180" ALT="Security" BORDER="1"><BR>
+<FONT SIZE="-1"><B>Centro Sicurezza</B><BR>
+Gestione utenti avanzata</FONT>
+</TD>
+<TD BGCOLOR="#C0C0C0" ALIGN="CENTER">
+<IMG SRC="/api/placeholder/250/180" ALT="Internet" BORDER="1"><BR>
+<FONT SIZE="-1"><B>Modulo Internet</B><BR>
+E-commerce integrato</FONT>
+</TD>
+</TR>
+</TABLE>
+</CENTER>
+</DIV>
+
+<HR SIZE="2" COLOR="#FF4500">
+
+<!-- Testimonianze con stile avanzato -->
+<DIV CLASS="content">
+<H2>💬 Testimonianze dei Clienti</H2>
+
+<TABLE WIDTH="100%">
+<TR>
+<TD WIDTH="50%">
+<DIV CLASS="testimonial">
+<TABLE>
+<TR>
+<TD WIDTH="80" ALIGN="CENTER" VALIGN="TOP">
+<IMG SRC="/api/placeholder/70/70" ALT="Cliente 1" BORDER="1">
+</TD>
+<TD VALIGN="TOP">
+<FONT SIZE="+1" COLOR="#000080"><B>"Fantastico!"</B></FONT><BR>
+<FONT SIZE="-1"><I>"Dal passaggio a Windows 98 e alla versione Y2K, 
+la produttivita' e' aumentata del 300%! I nostri 50 dipendenti 
+lavorano tutti contemporaneamente senza problemi."</I></FONT><BR><BR>
+<B>Marco Bianchi</B><BR>
+<FONT SIZE="-1">CEO, Supermercati CONAD</FONT>
+</TD>
+</TR>
+</TABLE>
+</DIV>
+</TD>
+<TD WIDTH="50%">
+<DIV CLASS="testimonial">
+<TABLE>
+<TR>
+<TD WIDTH="80" ALIGN="CENTER" VALIGN="TOP">
+<IMG SRC="/api/placeholder/70/70" ALT="Cliente 2" BORDER="1">
+</TD>
+<TD VALIGN="TOP">
+<FONT SIZE="+1" COLOR="#000080"><B>"Rivoluzionario!"</B></FONT><BR>
+<FONT SIZE="-1"><I>"L'integrazione Internet ci permette di controllare 
+tutti i nostri 25 punti vendita da casa. Il ROI e' stato immediato!"</I></FONT><BR><BR>
+<B>Anna Rossi</B><BR>
+<FONT SIZE="-1">Direttore, Catena UPIM</FONT>
+</TD>
+</TR>
+</TABLE>
+</DIV>
+</TD>
+</TR>
+</TABLE>
+</DIV>
+
+<HR SIZE="3" COLOR="#800000">
+
+<!-- Prezzi con tabella avanzata -->
+<A NAME="prices"></A>
+<DIV CLASS="content">
+<H2>💰 Listino Prezzi - Offerte Millennium!</H2>
+
+<CENTER>
+<TABLE BORDER="4" CELLPADDING="12" CELLSPACING="2" BGCOLOR="#FFFFFF">
+<TR BGCOLOR="#000080">
+<TH><FONT COLOR="#FFFFFF">Versione</FONT></TH>
+<TH><FONT COLOR="#FFFFFF">Caratteristiche</FONT></TH>
+<TH><FONT COLOR="#FFFFFF">Prezzo 1997</FONT></TH>
+<TH><FONT COLOR="#FFFFFF">Prezzo Y2K</FONT></TH>
+<TH><FONT COLOR="#FFFFFF">Sconto</FONT></TH>
+<TH><FONT COLOR="#FFFFFF">Ordina Subito</FONT></TH>
+</TR>
+<TR BGCOLOR="#E0E0E0">
+<TD ALIGN="CENTER"><B>STARTER</B></TD>
+<TD>
+• 1-3 Utenti<BR>
+• Database Access<BR>
+• Report standard<BR>
+• E-mail support
+</TD>
+<TD ALIGN="CENTER"><S>₤ 650.000</S></TD>
+<TD ALIGN="CENTER"><SPAN CLASS="price">₤ 450.000</SPAN></TD>
+<TD ALIGN="CENTER"><FONT COLOR="#FF0000"><B>-30%</B></FONT></TD>
+<TD ALIGN="CENTER">
+<FORM METHOD="POST" ACTION="mailto:ordini@gestioneincassi.com">
+<INPUT TYPE="HIDDEN" NAME="prodotto" VALUE="STARTER">
+<INPUT TYPE="SUBMIT" VALUE="ORDINA" STYLE="background-color: #00FF00; font-weight: bold;">
+</FORM>
+</TD>
+</TR>
+<TR BGCOLOR="#FFFACD">
+<TD ALIGN="CENTER"><B>PROFESSIONAL</B><BR>
+<FONT SIZE="-1" COLOR="#FF0000">★ PIÙ VENDUTO ★</FONT>
+</TD>
+<TD>
+• 1-50 Utenti<BR>
+• SQL Server support<BR>
+• Crystal Reports<BR>
+• Internet integration<BR>
+• Phone support
+</TD>
+<TD ALIGN="CENTER"><S>₤ 1.800.000</S></TD>
+<TD ALIGN="CENTER"><SPAN CLASS="price">₤ 1.200.000</SPAN></TD>
+<TD ALIGN="CENTER"><FONT COLOR="#FF0000"><B>-33%</B></FONT></TD>
+<TD ALIGN="CENTER">
+<FORM METHOD="POST" ACTION="mailto:ordini@gestioneincassi.com">
+<INPUT TYPE="HIDDEN" NAME="prodotto" VALUE="PROFESSIONAL">
+<INPUT TYPE="SUBMIT" VALUE="ORDINA" STYLE="background-color: #FFD700; font-weight: bold;">
+</FORM>
+</TD>
+</TR>
+<TR BGCOLOR="#F0FFFF">
+<TD ALIGN="CENTER"><B>ENTERPRISE</B><BR>
+<FONT SIZE="-1" COLOR="#0000FF">⭐ Y2K CERTIFIED ⭐</FONT>
+</TD>
+<TD>
+• Utenti illimitati<BR>
+• Oracle 8i support<BR>
+• E-commerce module<BR>
+• 24/7 support<BR>
+• Custom development
+</TD>
+<TD ALIGN="CENTER"><S>₤ 4.500.000</S></TD>
+<TD ALIGN="CENTER"><SPAN CLASS="price">₤ 2.900.000</SPAN></TD>
+<TD ALIGN="CENTER"><FONT COLOR="#FF0000"><B>-35%</B></FONT></TD>
+<TD ALIGN="CENTER">
+<FORM METHOD="POST" ACTION="mailto:ordini@gestioneincassi.com">
+<INPUT TYPE="HIDDEN" NAME="prodotto" VALUE="ENTERPRISE">
+<INPUT TYPE="SUBMIT" VALUE="ORDINA" STYLE="background-color: #FF69B4; font-weight: bold;">
+</FORM>
+</TD>
+</TR>
+</TABLE>
+</CENTER>
+
+<P><CENTER>
+<FONT SIZE="+1" COLOR="#FF0000"><B>⚠️ OFFERTA SPECIALE MILLENNIUM ⚠️</B></FONT><BR>
+<FONT SIZE="+1">Upgrade GRATUITO alla versione Anno 2000 per tutti gli ordini entro il 31/12/1997!</FONT><BR>
+<FONT SIZE="-1">*Offerta valida fino ad esaurimento scorte</FONT>
+</CENTER></P>
+</DIV>
+
+<HR SIZE="2" COLOR="#4169E1">
+
+<!-- Download con FTP e HTTP -->
+<A NAME="download"></A>
+<DIV CLASS="content">
+<H2>💾 Download Center</H2>
+
+<TABLE BORDER="2" CELLPADDING="8" WIDTH="100%" BGCOLOR="#F5F5F5">
+<TR BGCOLOR="#4682B4">
+<TH><FONT COLOR="#FFFFFF">File</FONT></TH>
+<TH><FONT COLOR="#FFFFFF">Descrizione</FONT></TH>
+<TH><FONT COLOR="#FFFFFF">Dimensione</FONT></TH>
+<TH><FONT COLOR="#FFFFFF">Ultima modifica</FONT></TH>
+<TH><FONT COLOR="#FFFFFF">Download</FONT></TH>
+</TR>
+<TR>
+<TD><B>GINCAS30.EXE</B></TD>
+<TD>Demo completa Windows 98/NT 4.0 (60 giorni)</TD>
+<TD>12.8 MB</TD>
+<TD>15/10/1997</TD>
+<TD>
+<A HREF="ftp://ftp.gestioneincassi.com/demo/gincas30.exe">FTP</A> | 
+<A HREF="http://www.gestioneincassi.com/download/gincas30.exe">HTTP</A>
+</TD>
+</TR>
+<TR BGCOLOR="#FFFFCC">
+<TD><B>Y2KPATCH.EXE</B></TD>
+<TD>Patch Y2K per versioni precedenti</TD>
+<TD>3.2 MB</TD>
+<TD>01/11/1997</TD>
+<TD>
+<A HREF="ftp://ftp.gestioneincassi.com/patches/y2kpatch.exe">FTP</A> | 
+<A HREF="http://www.gestioneincassi.com/download/y2kpatch.exe">HTTP</A>
+</TD>
+</TR>
+<TR>
+<TD><B>MANUAL30.PDF</B></TD>
+<TD>Manuale completo versione 3.0</TD>
+<TD>2.1 MB</TD>
+<TD>20/10/1997</TD>
+<TD>
+<A HREF="ftp://ftp.gestioneincassi.com/docs/manual30.pdf">FTP</A> | 
+<A HREF="http://www.gestioneincassi.com/docs/manual30.pdf">HTTP</A>
+</TD>
+</TR>
+<TR BGCOLOR="#FFCCCC">
+<TD><B>IESETUP.EXE</B></TD>
+<TD>Internet Explorer 4.0 (richiesto)</TD>
+<TD>16.2 MB</TD>
+<TD>30/09/1997</TD>
+<TD>
+<A HREF="http://www.microsoft.com/ie/">Microsoft.com</A>
+</TD>
+</TR>
+</TABLE>
+
+<P><B>Requisiti di Sistema:</B></P>
+<UL>
+<LI><B>Sistema Operativo:</B> Windows 95 OSR2, Windows 98, Windows NT 4.0 SP3+</LI>
+<LI><B>Processore:</B> Pentium 133 MHz (raccomandato Pentium II 233 MHz)</LI>
+<LI><B>Memoria:</B> 32 MB RAM (raccomandato 64 MB)</LI>
+<LI><B>Spazio disco:</B> 85 MB per installazione completa</LI>
+<LI><B>Video:</B> SVGA 800x600, 256 colori (raccomandato 1024x768, 16-bit)</LI>
+<LI><B>Altri:</B> Internet Explorer 4.0, DirectX 5.0, Sound Blaster compatible</LI>
+</UL>
+</DIV>
+
+<HR SIZE="3" COLOR="#800080">
+
+<!-- Form avanzato con JavaScript -->
+<DIV CLASS="content">
+<H2>📋 Richiesta Informazioni Online</H2>
+
+<FORM NAME="orderForm" METHOD="POST" ACTION="mailto:info@gestioneincassi.com?subject=Richiesta Informazioni" 
+      onSubmit="return validateForm();">
+
+<TABLE BORDER="1" CELLPADDING="8" BGCOLOR="#F0F8FF">
+<TR BGCOLOR="#4169E1">
+<TD COLSPAN="2"><FONT COLOR="#FFFFFF" SIZE="+1"><B>📝 Dati Aziendali</B></FONT></TD>
+</TR>
+<TR>
+<TD><B>Ragione Sociale:</B></TD>
+<TD><INPUT TYPE="TEXT" NAME="company" SIZE="40" MAXLENGTH="100"></TD>
+</TR>
+<TR>
+<TD><B>Settore:</B></TD>
+<TD>
+<SELECT NAME="sector">
+<OPTION VALUE="">Seleziona settore...</OPTION>
+<OPTION VALUE="retail">Retail/GDO</OPTION>
+<OPTION VALUE="horeca">Ho.Re.Ca.</OPTION>
+<OPTION VALUE="services">Servizi</OPTION>
+<OPTION VALUE="manufacturing">Manifatturiero</OPTION>
+<OPTION VALUE="other">Altro</OPTION>
+</SELECT>
+</TD>
+</TR>
+<TR>
+<TD><B>Numero dipendenti:</B></TD>
+<TD>
+<INPUT TYPE="RADIO" NAME="employees" VALUE="1-10"> 1-10
+<INPUT TYPE="RADIO" NAME="employees" VALUE="11-50"> 11-50
+<INPUT TYPE="RADIO" NAME="employees" VALUE="51-100"> 51-100
+<INPUT TYPE="RADIO" NAME="employees" VALUE="100+"> 100+
+</TD>
+</TR>
+<TR BGCOLOR="#4169E1">
+<TD COLSPAN="2"><FONT COLOR="#FFFFFF" SIZE="+1"><B>👤 Contatto</B></FONT></TD>
+</TR>
+<TR>
+<TD><B>Nome e Cognome:</B></TD>
+<TD><INPUT TYPE="TEXT" NAME="name" SIZE="40" MAXLENGTH="50"></TD>
+</TR>
+<TR>
+<TD><B>Email:</B></TD>
+<TD><INPUT TYPE="TEXT" NAME="email" SIZE="40" MAXLENGTH="100"></TD>
+</TR>
+<TR>
+<TD><B>Telefono:</B></TD>
+<TD><INPUT TYPE="TEXT" NAME="phone" SIZE="20" MAXLENGTH="20"></TD>
+</TR>
+<TR BGCOLOR="#4169E1">
+<TD COLSPAN="2"><FONT COLOR="#FFFFFF" SIZE="+1"><B>⚙️ Configurazione Tecnica</B></FONT></TD>
+</TR>
+<TR>
+<TD><B>Sistema Operativo:</B></TD>
+<TD>
+<INPUT TYPE="CHECKBOX" NAME="os_win95"> Windows 95
+<INPUT TYPE="CHECKBOX" NAME="os_win98"> Windows 98
+<INPUT TYPE="CHECKBOX" NAME="os_winnt"> Windows NT 4.0<BR>
+<INPUT TYPE="CHECKBOX" NAME="os_other"> Altro: <INPUT TYPE="TEXT" NAME="os_other_spec" SIZE="20">
+</TD>
+</TR>
+<TR>
+<TD><B>Database preferito:</B></TD>
+<TD>
+<SELECT NAME="database">
+<OPTION VALUE="">Seleziona...</OPTION>
+<OPTION VALUE="access">Microsoft Access</OPTION>
+<OPTION VALUE="sqlserver">SQL Server 6.5/7.0</OPTION>
+<OPTION VALUE="oracle">Oracle 8i</OPTION>
+<OPTION VALUE="other">Altro</OPTION>
+</SELECT>
+</TD>
+</TR>
+<TR>
+<TD><B>Rete esistente:</B></TD>
+<TD>
+<INPUT TYPE="RADIO" NAME="network" VALUE="none"> Nessuna rete
+<INPUT TYPE="RADIO" NAME="network" VALUE="peer"> Peer-to-peer
+<INPUT TYPE="RADIO" NAME="network" VALUE="server"> Client/Server
+</TD>
+</TR>
+<TR BGCOLOR="#4169E1">
+<TD COLSPAN="2"><FONT COLOR="#FFFFFF" SIZE="+1"><B>📝 Richiesta</B></FONT></TD>
+</TR>
+<TR>
+<TD><B>Tipo richiesta:</B></TD>
+<TD>
+<INPUT TYPE="CHECKBOX" NAME="request_demo"> Demo gratuita in sede
+<INPUT TYPE="CHECKBOX" NAME="request_quote"> Preventivo personalizzato<BR>
+<INPUT TYPE="CHECKBOX" NAME="request_info"> Informazioni tecniche
+<INPUT TYPE="CHECKBOX" NAME="request_upgrade"> Upgrade da versione precedente
+</TD>
+</TR>
+<TR>
+<TD><B>Urgenza:</B></TD>
+<TD>
+<SELECT NAME="urgency">
+<OPTION VALUE="low">Bassa - entro 1 mese</OPTION>
+<OPTION VALUE="medium">Media - entro 2 settimane</OPTION>
+<OPTION VALUE="high">Alta - entro 1 settimana</OPTION>
+<OPTION VALUE="urgent">Urgente - entro 48 ore</OPTION>
+</SELECT>
+</TD>
+</TR>
+<TR>
+<TD VALIGN="TOP"><B>Note aggiuntive:</B></TD>
+<TD>
+<TEXTAREA NAME="notes" ROWS="5" COLS="50" WRAP="SOFT">
+Inserire qui eventuali richieste specifiche o informazioni aggiuntive...
+</TEXTAREA>
+</TD>
+</TR>
+<TR>
+<TD COLSPAN="2" ALIGN="CENTER">
+<INPUT TYPE="SUBMIT" VALUE="📧 INVIA RICHIESTA" 
+       STYLE="background-color: #FFD700; font-size: 14pt; font-weight: bold; padding: 8px;">
+<INPUT TYPE="RESET" VALUE="🔄 CANCELLA" 
+       STYLE="background-color: #FF6347; color: white; font-size: 14pt; font-weight: bold; padding: 8px;">
+</TD>
+</TR>
+</TABLE>
+</FORM>
+
+<P><FONT SIZE="-1" COLOR="#808080">
+🔒 I vostri dati sono protetti secondo le normative sulla privacy. 
+Verranno utilizzati esclusivamente per rispondere alla vostra richiesta.
+</FONT></P>
+</DIV>
+
+<HR SIZE="3" COLOR="#FF4500">
+
+<!-- Sezione contatti con informazioni complete -->
+<A NAME="contact"></A>
+<DIV CLASS="content">
+<H2>📞 Informazioni di Contatto</H2>
+
+<TABLE BORDER="2" CELLPADDING="10" WIDTH="100%">
+<TR>
+<TD WIDTH="40%" BGCOLOR="#E6E6FA" VALIGN="TOP">
+<H3>🏢 Sede Principale</H3>
+<P>
+<B>GESTIONE INCASSI Corporation</B><BR>
+Via dell'Informatica, 123<BR>
+36061 Bassano del Grappa (VI)<BR>
+Italia
+</P>
+
+<P>
+📞 <B>Tel:</B> +39-0424-066922<BR>
+📠 <B>Fax:</B> +39-0424-066923<BR>
+📧 <B>E-mail:</B> <A HREF="mailto:info@gestioneincassi.com">info@gestioneincassi.com</A><BR>
+🌐 <B>Web:</B> <A HREF="http://www.gestioneincassi.com">www.gestioneincassi.com</A><BR>
+💾 <B>FTP:</B> <A HREF="ftp://ftp.gestioneincassi.com">ftp.gestioneincassi.com</A>
+</P>
+
+<P>
+<B>Orari Ufficio:</B><BR>
+Lun-Ven: 8:30-12:30 / 14:00-18:30<BR>
+Sabato: 9:00-12:00<BR>
+Domenica: Chiuso
+</P>
+</TD>
+
+<TD WIDTH="30%" BGCOLOR="#F0FFFF" VALIGN="TOP">
+<H3>🎧 Supporto Tecnico</H3>
+<P>
+📞 <B>Help Desk:</B> +39-0424-066924<BR>
+📧 <B>E-mail:</B> <A HREF="mailto:support@gestioneincassi.com">support@gestioneincassi.com</A><BR>
+💬 <B>Chat IRC:</B> #gincashelp su IRCnet<BR>
+📟 <B>Pager:</B> 335-1234567
+</P>
+
+<P>
+<B>Orari Supporto:</B><BR>
+Lun-Ven: 9:00-17:00<BR>
+Sabato: 9:00-13:00<BR>
+<FONT COLOR="#FF0000">Emergenze 24/7 per clienti Enterprise</FONT>
+</P>
+
+<H3>💰 Ufficio Vendite</H3>
+<P>
+📞 <B>Commerciale:</B> +39-0424-066925<BR>
+📧 <B>E-mail:</B> <A HREF="mailto:sales@gestioneincassi.com">sales@gestioneincassi.com</A>
+</P>
+</TD>
+
+<TD WIDTH="30%" BGCOLOR="#FFF8DC" VALIGN="TOP">
+<H3>👥 Staff</H3>
+<P>
+<B>Dott. Mario Rossi</B><BR>
+<FONT SIZE="-1">CEO & Founder</FONT><BR>
+📧 <A HREF="mailto:m.rossi@gestioneincassi.com">m.rossi@gestioneincassi.com</A>
+</P>
+
+<P>
+<B>Ing. Giuseppe Bianchi</B><BR>
+<FONT SIZE="-1">CTO & Lead Developer</FONT><BR>
+📧 <A HREF="mailto:g.bianchi@gestioneincassi.com">g.bianchi@gestioneincassi.com</A>
+</P>
+
+<P>
+<B>Rag. Anna Verdi</B><BR>
+<FONT SIZE="-1">Sales Manager</FONT><BR>
+📧 <A HREF="mailto:a.verdi@gestioneincassi.com">a.verdi@gestioneincassi.com</A>
+</P>
+
+<P>
+<B>Dr. Paolo Neri</B><BR>
+<FONT SIZE="-1">Technical Support Manager</FONT><BR>
+📧 <A HREF="mailto:p.neri@gestioneincassi.com">p.neri@gestioneincassi.com</A>
+</P>
+</TD>
+</TR>
+</TABLE>
+</DIV>
+
+<HR SIZE="2" COLOR="#2E8B57">
+
+<!-- Certificazioni e partnership -->
+<DIV CLASS="content">
+<H2>🏆 Certificazioni e Partnership</H2>
+
+<CENTER>
+<TABLE BORDER="1" CELLPADDING="8" CELLSPACING="4">
+<TR>
+<TD ALIGN="CENTER" BGCOLOR="#F0F0F0">
+<IMG SRC="/api/placeholder/120/60" ALT="Microsoft Certified Partner" BORDER="0"><BR>
+<FONT SIZE="-1"><B>Microsoft<BR>Certified Partner</B></FONT>
+</TD>
+<TD ALIGN="CENTER" BGCOLOR="#F0F0F0">
+<IMG SRC="/api/placeholder/120/60" ALT="Intel Inside" BORDER="0"><BR>
+<FONT SIZE="-1"><B>Intel Inside<BR>Optimized</B></FONT>
+</TD>
+<TD ALIGN="CENTER" BGCOLOR="#F0F0F0">
+<IMG SRC="/api/placeholder/120/60" ALT="Y2K Ready" BORDER="0"><BR>
+<FONT SIZE="-1"><B>Y2K Ready<BR>Certified</B></FONT>
+</TD>
+<TD ALIGN="CENTER" BGCOLOR="#F0F0F0">
+<IMG SRC="/api/placeholder/120/60" ALT="Novell Partner" BORDER="0"><BR>
+<FONT SIZE="-1"><B>Novell<BR>Gold Partner</B></FONT>
+</TD>
+</TR>
+<TR>
+<TD ALIGN="CENTER" BGCOLOR="#F0F0F0">
+<IMG SRC="/api/placeholder/120/60" ALT="Oracle Partner" BORDER="0"><BR>
+<FONT SIZE="-1"><B>Oracle<BR>Solution Provider</B></FONT>
+</TD>
+<TD ALIGN="CENTER" BGCOLOR="#F0F0F0">
+<IMG SRC="/api/placeholder/120/60" ALT="ISO 9001" BORDER="0"><BR>
+<FONT SIZE="-1"><B>ISO 9001<BR>Quality Certified</B></FONT>
+</TD>
+<TD ALIGN="CENTER" BGCOLOR="#F0F0F0">
+<IMG SRC="/api/placeholder/120/60" ALT="VeriSign Secured" BORDER="0"><BR>
+<FONT SIZE="-1"><B>VeriSign<BR>SSL Secured</B></FONT>
+</TD>
+<TD ALIGN="CENTER" BGCOLOR="#F0F0F0">
+<IMG SRC="/api/placeholder/120/60" ALT="DirectX Compatible" BORDER="0"><BR>
+<FONT SIZE="-1"><B>DirectX 5.0<BR>Compatible</B></FONT>
+</TD>
+</TR>
+</TABLE>
+</CENTER>
+</DIV>
+
+<HR SIZE="2" COLOR="#4B0082">
+
+<!-- Link utili e risorse -->
+<DIV CLASS="content">
+<H2>🔗 Link Utili e Risorse</H2>
+
+<TABLE BORDER="1" CELLPADDING="5" WIDTH="100%">
+<TR BGCOLOR="#DDDDDD">
+<TH>Categoria</TH>
+<TH>Risorsa</TH>
+<TH>Descrizione</TH>
+</TR>
+<TR>
+<TD ROWSPAN="3"><B>Partner Tecnologici</B></TD>
+<TD><A HREF="http://www.microsoft.com" TARGET="_blank">Microsoft Corporation</A></TD>
+<TD>Windows, Office, SQL Server</TD>
+</TR>
+<TR>
+<TD><A HREF="http://www.oracle.com" TARGET="_blank">Oracle Corporation</A></TD>
+<TD>Database Oracle 8i</TD>
+</TR>
+<TR>
+<TD><A HREF="http://www.novell.com" TARGET="_blank">Novell Inc.</A></TD>
+<TD>NetWare, GroupWise</TD>
+</TR>
+<TR BGCOLOR="#F0F0F0">
+<TD ROWSPAN="3"><B>Risorse Tecniche</B></TD>
+<TD><A HREF="http://java.sun.com" TARGET="_blank">Sun Microsystems - Java</A></TD>
+<TD>Java Runtime Environment</TD>
+</TR>
+<TR BGCOLOR="#F0F0F0">
+<TD><A HREF="http://www.adobe.com" TARGET="_blank">Adobe Systems</A></TD>
+<TD>Acrobat Reader per manuali PDF</TD>
+</TR>
+<TR BGCOLOR="#F0F0F0">
+<TD><A HREF="http://www.winzip.com" TARGET="_blank">WinZip Computing</A></TD>
+<TD>Utility per file compressi</TD>
+</TR>
+<TR>
+<TD ROWSPAN="2"><B>Informazioni Y2K</B></TD>
+<TD><A HREF="http://www.year2000.com" TARGET="_blank">Year 2000 Information Center</A></TD>
+<TD>Informazioni complete sul Y2K</TD>
+</TR>
+<TR>
+<TD><A HREF="http://www.itaa.org/year2000" TARGET="_blank">ITAA Y2K Resource Center</A></TD>
+<TD>Linee guida per l'industria IT</TD>
+</TR>
+</TABLE>
+</DIV>
+
+<HR SIZE="3" COLOR="#800000">
+
+<!-- Statistiche e contatori -->
+<DIV CLASS="content">
+<CENTER>
+<TABLE BORDER="2" CELLPADDING="10" BGCOLOR="#F5F5DC">
+<TR>
+<TD ALIGN="CENTER">
+<FONT SIZE="+1" COLOR="#800000"><B>📊 Statistiche Sito</B></FONT><BR><BR>
+<SPAN ID="counter">Caricamento contatore...</SPAN><BR>
+<FONT SIZE="-1">dal 1° Gennaio 1997</FONT><BR><BR>
+<B>Ultimo aggiornamento:</B><BR>
+<FONT SIZE="-1">20 Novembre 1997 - 14:30 CET</FONT><BR><BR>
+<B>Prossimo aggiornamento:</B><BR>
+<FONT SIZE="-1">1° Dicembre 1997</FONT>
+</TD>
+<TD ALIGN="CENTER">
+<FONT SIZE="+1" COLOR="#800000"><B>🌐 Informazioni Browser</B></FONT><BR><BR>
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+document.write("<B>Il tuo browser:</B><BR>");
+document.write("<FONT SIZE='-1'>" + navigator.appName + " " + navigator.appVersion + "</FONT><BR><BR>");
+document.write("<B>Risoluzione ottimale:</B><BR>");
+document.write("<FONT SIZE='-1'>1024x768, 16-bit color</FONT><BR><BR>");
+document.write("<B>Plugins consigliati:</B><BR>");
+document.write("<FONT SIZE='-1'>Flash, Shockwave, QuickTime</FONT>");
+-->
+</SCRIPT>
+<NOSCRIPT>
+<B>JavaScript disabilitato</B><BR>
+<FONT SIZE="-1">Per una migliore esperienza<BR>abilitare JavaScript</FONT>
+</NOSCRIPT>
+</TD>
+</TR>
+</TABLE>
+</CENTER>
+</DIV>
+
+<HR SIZE="4" COLOR="#000080">
+
+<!-- Footer con informazioni legali -->
+<DIV CLASS="footer">
+<TABLE WIDTH="100%">
+<TR>
+<TD WIDTH="33%" ALIGN="LEFT" VALIGN="TOP">
+<FONT COLOR="#FFFFFF" SIZE="-1">
+<B>© 1997 GESTIONE INCASSI Corp.</B><BR>
+Tutti i diritti riservati<BR>
+P.IVA: 12345678901<BR>
+REA: VI-123456
+</FONT>
+</TD>
+<TD WIDTH="34%" ALIGN="CENTER" VALIGN="TOP">
+<FONT COLOR="#FFFFFF" SIZE="-1">
+<A HREF="privacy.html" STYLE="color: #FFFF00;">Privacy Policy</A> |
+<A HREF="legal.html" STYLE="color: #FFFF00;">Note Legali</A> |
+<A HREF="sitemap.html" STYLE="color: #FFFF00;">Mappa Sito</A><BR>
+<A HREF="mailto:webmaster@gestioneincassi.com" STYLE="color: #FFFF00;">webmaster@gestioneincassi.com</A>
+</FONT>
+</TD>
+<TD WIDTH="33%" ALIGN="RIGHT" VALIGN="TOP">
+<IMG SRC="/api/placeholder/80/15" ALT="Best viewed with IE 4.0" BORDER="0"><BR>
+<IMG SRC="/api/placeholder/80/15" ALT="HTML 3.2 Compliant" BORDER="0"><BR>
+<IMG SRC="/api/placeholder/80/15" ALT="CSS Compatible" BORDER="0">
+</TD>
+</TR>
+</TABLE>
+
+<P><CENTER>
+<FONT SIZE="-2" COLOR="#C0C0C0">
+Marchi registrati: Windows, Windows 95, Windows 98, Windows NT, Internet Explorer, DirectX sono marchi di Microsoft Corporation.
+Java è marchio di Sun Microsystems. Oracle è marchio di Oracle Corporation. Pentium è marchio di Intel Corporation.
+Tutti gli altri marchi appartengono ai rispettivi proprietari.
+</FONT>
+</CENTER></P>
+</DIV>
+
+<!-- Hidden counter script -->
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+// Simulazione contatore visite avanzato
+function showAdvancedCounter() {
+    var visits = Math.floor(Math.random() * 50000) + 125000;
+    var today = Math.floor(Math.random() * 200) + 50;
+    var online = Math.floor(Math.random() * 15) + 3;
+    
+    document.getElementById("counter").innerHTML = 
+        "<B>Visite totali:</B> " + visits + "<BR>" +
+        "<B>Visite oggi:</B> " + today + "<BR>" +
+        "<B>Utenti online:</B> " + online;
+}
+
+// Aggiorna il contatore
+setTimeout(showAdvancedCounter, 2000);
+-->
+</SCRIPT>
+
+</BODY>
+</HTML>
