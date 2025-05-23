@@ -250,6 +250,13 @@
             }
         }
 
+        /* Rafforza sticky menu */
+        .navbar.sticky-top {
+            position: sticky !important;
+            top: 0;
+            z-index: 1030;
+        }
+
         /* Footer contact link style */
         footer a[href^="tel"] {
             color: #fff !important;
@@ -362,12 +369,10 @@
                     </button>
                 </div>
                 <div class="col-lg-6">
-                    <div class="screenshot-placeholder animate-on-scroll">
-                        <div class="text-center">
-                            <i class="fas fa-desktop fa-3x mb-3"></i>
-                            <h5>Screenshot Dashboard Principale</h5>
-                            <p class="mb-0">Interfaccia intuitiva per la gestione quotidiana</p>
-                        </div>
+                    <div class="screenshot-placeholder animate-on-scroll p-0"
+                        style="border:none; background:transparent;">
+                        <img src="GestioneIncassiScreenshot.png" alt="Dashboard Gestione Incassi"
+                            style="width:100%; height:100%; object-fit:cover; border-radius:12px; box-shadow:0 2px 16px rgba(0,0,0,0.08); display:block;">
                     </div>
                 </div>
             </div>
@@ -476,39 +481,17 @@
             </div>
             <div class="row g-4">
                 <div class="col-lg-6">
-                    <div class="screenshot-placeholder animate-on-scroll">
-                        <div class="text-center">
-                            <i class="fas fa-plus-circle fa-3x mb-3"></i>
-                            <h5>Form di Inserimento</h5>
-                            <p class="mb-0">Interfaccia intuitiva per inserire nuovi incassi</p>
-                        </div>
+                    <div class="screenshot-placeholder animate-on-scroll p-0"
+                        style="border:none; background:transparent; height:300px; min-height:200px; display:flex; align-items:center; justify-content:center;">
+                        <img src="FormInserimento.png" alt="Form Inserimento Gestione Incassi"
+                            style="max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain; border-radius:12px; box-shadow:0 2px 16px rgba(0,0,0,0.08); display:block;">
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <div class="screenshot-placeholder animate-on-scroll">
-                        <div class="text-center">
-                            <i class="fas fa-table fa-3x mb-3"></i>
-                            <h5>Tabella Incassi</h5>
-                            <p class="mb-0">Vista completa con modifica in linea</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="screenshot-placeholder animate-on-scroll">
-                        <div class="text-center">
-                            <i class="fas fa-search fa-3x mb-3"></i>
-                            <h5>Ricerca Avanzata</h5>
-                            <p class="mb-0">Filtri potenti per trovare ogni transazione</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="screenshot-placeholder animate-on-scroll">
-                        <div class="text-center">
-                            <i class="fas fa-mobile-alt fa-3x mb-3"></i>
-                            <h5>Versione Mobile</h5>
-                            <p class="mb-0">Perfetta su smartphone e tablet</p>
-                        </div>
+                    <div class="screenshot-placeholder animate-on-scroll p-0"
+                        style="border:none; background:transparent; height:300px; min-height:200px; display:flex; align-items:center; justify-content:center;">
+                        <img src="RicercaAvanzata.png" alt="RicercaAvanzata Gestione Incassi"
+                            style="max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain; border-radius:12px; box-shadow:0 2px 16px rgba(0,0,0,0.08); display:block;">
                     </div>
                 </div>
             </div>
@@ -621,7 +604,7 @@
     <section class="section-padding newsletter-highlight" id="newsletter">
         <div class="container newsletter-content">
             <div class="row">
-                <div class="col-lg-8 mx-auto text-center">
+                <div class="col-lg-10 mx-auto text-center"> <!-- Cambiato da col-lg-8 a col-lg-10 -->
                     <div class="mb-4">
                         <i class="fas fa-gift fa-3x mb-3"></i>
                     </div>
@@ -632,27 +615,37 @@
                         Incassi sarà disponibile.<br><strong>Primo mese completamente gratuito</strong> per i primi
                         iscritti!</p>
                     <form
-                        class="newsletter-form animate-on-scroll p-4 shadow-lg border border-warning rounded-4 bg-white position-relative"
-                        style="z-index:2;">
+                        class="newsletter-form animate-on-scroll p-4 shadow-lg border border-warning rounded-4 bg-white position-relative w-100"
+                        style="z-index:2; max-width:700px; margin:0 auto;" id="newsletterForm" novalidate>
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <input type="text" class="form-control form-control-custom" placeholder="Il tuo nome *"
-                                    required>
+                                    name="nome" required minlength="2" maxlength="40" pattern="^[A-Za-zÀ-ÿ'\s]+$"
+                                    autocomplete="name">
+                                <div class="invalid-feedback">Inserisci un nome valido (solo lettere, almeno 2
+                                    caratteri).</div>
                             </div>
                             <div class="col-md-6">
                                 <input type="email" class="form-control form-control-custom"
-                                    placeholder="La tua email *" required>
+                                    placeholder="La tua email *" name="email" required autocomplete="email">
+                                <div class="invalid-feedback">Inserisci una email valida.</div>
                             </div>
                             <div class="col-md-6">
                                 <input type="tel" class="form-control form-control-custom"
-                                    placeholder="Numero di telefono">
+                                    placeholder="Numero di telefono" name="telefono" pattern="^[+\d\s-]{7,20}$"
+                                    autocomplete="tel">
+                                <div class="invalid-feedback">Inserisci un numero valido (minimo 7 cifre, solo numeri,
+                                    spazi, +, -).</div>
                             </div>
                             <div class="col-md-6">
                                 <input type="text" class="form-control form-control-custom"
-                                    placeholder="Nome della tua attività">
+                                    placeholder="Nome della tua attività" name="attivita" minlength="2" maxlength="50"
+                                    pattern="^[A-Za-zÀ-ÿ0-9'\s]+$" autocomplete="organization">
+                                <div class="invalid-feedback">Inserisci un nome attività valido (almeno 2 caratteri,
+                                    solo lettere e numeri).</div>
                             </div>
                             <div class="col-12">
-                                <select class="form-control form-control-custom">
+                                <select class="form-control form-control-custom" name="dipendenti" required>
                                     <option value="">Quanti dipendenti gestiscono gli incassi?</option>
                                     <option value="1-2">1-2 persone</option>
                                     <option value="3-5">3-5 persone</option>
@@ -660,6 +653,7 @@
                                     <option value="11-50">11-50 persone</option>
                                     <option value="50+">50+ persone</option>
                                 </select>
+                                <div class="invalid-feedback">Seleziona il numero di dipendenti.</div>
                             </div>
                             <div class="col-12">
                                 <button type="submit" class="btn btn-warning-custom btn-lg px-5">
@@ -766,6 +760,78 @@
                 if (icon) icon.style.transform = 'scale(1) rotate(0deg)';
             });
         });
+
+        // Chiudi il menu mobile dopo il click su una voce
+        document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
+            link.addEventListener('click', function () {
+                const navbarCollapse = document.getElementById('mainNavbar');
+                if (window.innerWidth < 992 && navbarCollapse.classList.contains('show')) {
+                    const bsCollapse = bootstrap.Collapse.getOrCreateInstance(navbarCollapse);
+                    bsCollapse.hide();
+                }
+            });
+        });
+
+        // Validazione avanzata form newsletter
+        const newsletterForm = document.getElementById('newsletterForm');
+        if (newsletterForm) {
+            newsletterForm.addEventListener('submit', function (e) {
+                let valid = true;
+                // Nome
+                const nome = newsletterForm.elements['nome'];
+                if (!nome.value.match(/^[A-Za-zÀ-ÿ'\s]{2,40}$/)) {
+                    nome.classList.add('is-invalid');
+                    valid = false;
+                } else {
+                    nome.classList.remove('is-invalid');
+                }
+                // Email
+                const email = newsletterForm.elements['email'];
+                if (!email.value.match(/^\S+@\S+\.\S+$/)) {
+                    email.classList.add('is-invalid');
+                    valid = false;
+                } else {
+                    email.classList.remove('is-invalid');
+                }
+                // Telefono (opzionale, ma se presente deve essere valido)
+                const telefono = newsletterForm.elements['telefono'];
+                if (telefono.value && !telefono.value.match(/^[+\d\s-]{7,20}$/)) {
+                    telefono.classList.add('is-invalid');
+                    valid = false;
+                } else {
+                    telefono.classList.remove('is-invalid');
+                }
+                // Attività (opzionale, ma se presente deve essere valido)
+                const attivita = newsletterForm.elements['attivita'];
+                if (attivita.value && !attivita.value.match(/^[A-Za-zÀ-ÿ0-9'\s]{2,50}$/)) {
+                    attivita.classList.add('is-invalid');
+                    valid = false;
+                } else {
+                    attivita.classList.remove('is-invalid');
+                }
+                // Dipendenti
+                const dipendenti = newsletterForm.elements['dipendenti'];
+                if (!dipendenti.value) {
+                    dipendenti.classList.add('is-invalid');
+                    valid = false;
+                } else {
+                    dipendenti.classList.remove('is-invalid');
+                }
+                if (!valid) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                } else {
+                    // Successo: puoi inviare o reindirizzare
+                    window.location.href = "thank-you.html";
+                }
+            });
+            // Rimuovi errore in tempo reale
+            newsletterForm.querySelectorAll('input,select').forEach(el => {
+                el.addEventListener('input', function () {
+                    el.classList.remove('is-invalid');
+                });
+            });
+        }
     </script>
 </body>
 
