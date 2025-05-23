@@ -5,11 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestione Incassi</title>
-    <link rel="icon" type="ico" href="favicon.ico">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -56,7 +54,7 @@
             padding: 2rem;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
             border: 1px solid #f0f0f0;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.3s, box-shadow 0.3s;
             height: 100%;
         }
 
@@ -76,6 +74,7 @@
             color: white;
             font-size: 1.5rem;
             margin-bottom: 1.5rem;
+            transition: transform 0.3s;
         }
 
         .screenshot-placeholder {
@@ -88,7 +87,7 @@
             justify-content: center;
             color: var(--text-muted);
             margin-bottom: 1rem;
-            transition: border-color 0.3s ease;
+            transition: border-color 0.3s;
         }
 
         .screenshot-placeholder:hover {
@@ -103,7 +102,7 @@
             border-radius: 8px;
             font-weight: 600;
             font-size: 1.1rem;
-            transition: all 0.3s ease;
+            transition: all 0.3s;
             box-shadow: 0 4px 15px rgba(255, 193, 7, 0.4);
         }
 
@@ -129,7 +128,7 @@
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
             border: 1px solid #f0f0f0;
             position: relative;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s;
         }
 
         .pricing-card.featured {
@@ -179,7 +178,7 @@
             border: 2px solid #e9ecef;
             border-radius: 8px;
             padding: 12px 16px;
-            transition: border-color 0.3s ease;
+            transition: border-color 0.3s;
         }
 
         .form-control-custom:focus {
@@ -197,12 +196,85 @@
         .animate-on-scroll {
             opacity: 0;
             transform: translateY(30px);
-            transition: all 0.6s ease;
+            transition: all 0.6s;
         }
 
         .animate-on-scroll.animated {
             opacity: 1;
             transform: translateY(0);
+        }
+
+        .menu-link {
+            transition: background 0.2s, color 0.2s;
+            border-radius: 6px;
+            margin-bottom: 2px;
+        }
+
+        .menu-link:hover,
+        .menu-link.active {
+            background: var(--primary-color);
+            color: #fff !important;
+        }
+
+        .navbar-nav {
+            flex-direction: row;
+            gap: 0.5rem;
+        }
+
+        .navbar-nav .nav-item {
+            width: auto !important;
+        }
+
+        .navbar-nav .nav-link,
+        .navbar-nav .btn {
+            text-align: left !important;
+            width: auto !important;
+            margin-bottom: 0;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        @media (max-width: 991.98px) {
+            .navbar-nav {
+                flex-direction: column;
+                gap: 0;
+            }
+
+            .navbar-nav .nav-link,
+            .navbar-nav .btn {
+                width: 100% !important;
+                text-align: center !important;
+                margin-bottom: 6px;
+                padding-left: 0.75rem;
+                padding-right: 0.75rem;
+            }
+        }
+
+        /* Footer contact link style */
+        footer a[href^="tel"] {
+            color: #fff !important;
+            text-decoration: none !important;
+        }
+
+        footer a[href^="mailto"] {
+            color: #fff !important;
+            text-decoration: none !important;
+        }
+
+        footer a[href^="tel"]:hover,
+        footer a[href^="mailto"]:hover {
+            text-decoration: underline !important;
+        }
+
+        @media (min-width: 992px) {
+            .text-lg-end {
+                text-align: right !important;
+            }
+
+            .footer-flex-lg-end {
+                justify-content: flex-end !important;
+                align-items: center !important;
+            }
         }
     </style>
 </head>
@@ -210,15 +282,56 @@
 <body>
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
-        <div class="container">
-            <a class="navbar-brand fw-bold text-primary-custom" href="#">
-                <i class="fas fa-euro-sign me-2"></i>Gestione Incassi
+        <div class="container d-flex justify-content-between align-items-center">
+            <a class="navbar-brand fw-bold text-primary-custom d-flex align-items-center gap-2 me-auto" href="#hero">
+                <img src="GestioneIncassiVerde.png" alt="Gestione Incassi"
+                    style="height: 38px; width: auto; display: block; object-fit: contain;" loading="lazy">
+                Gestione Incassi
             </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+                aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="mainNavbar">
+                <ul class="navbar-nav ms-0 mb-2 mb-lg-0 justify-content-end" style="width:auto;">
+                    <li class="nav-item w-100">
+                        <a class="nav-link menu-link text-center text-lg-start fw-semibold" href="#hero">
+                            <i class="fas fa-home me-1"></i> Home
+                        </a>
+                    </li>
+                    <li class="nav-item w-100">
+                        <a class="nav-link menu-link text-center text-lg-start fw-semibold" href="#features">
+                            <i class="fas fa-star me-1"></i> Perché?
+                        </a>
+                    </li>
+                    <li class="nav-item w-100">
+                        <a class="nav-link menu-link text-center text-lg-start fw-semibold" href="#screenshots">
+                            <i class="fas fa-desktop me-1"></i> Interfaccia
+                        </a>
+                    </li>
+                    <li class="nav-item w-100">
+                        <a class="nav-link menu-link text-center text-lg-start fw-semibold" href="#testimonial">
+                            <i class="fas fa-comment-dots me-1"></i> Testimonianze
+                        </a>
+                    </li>
+                    <li class="nav-item w-100">
+                        <a class="nav-link menu-link text-center text-lg-start fw-semibold" href="#pricing">
+                            <i class="fas fa-tags me-1"></i> Prezzi
+                        </a>
+                    </li>
+                    <li class="nav-item w-100">
+                        <a class="nav-link btn btn-warning-custom ms-lg-3 px-3 py-1 text-white text-center mt-2 mt-lg-0 fw-bold"
+                            href="tel:+390424066922" style="font-weight:600;">
+                            <i class="fas fa-bell me-1"></i> Chiama
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero-section">
+    <section class="hero-section" id="hero">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6 hero-content">
@@ -262,7 +375,7 @@
     </section>
 
     <!-- Features Section -->
-    <section class="section-padding">
+    <section class="section-padding" id="features">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 mx-auto text-center mb-5">
@@ -351,7 +464,7 @@
     </section>
 
     <!-- Screenshots Section -->
-    <section class="section-padding bg-light-custom">
+    <section class="section-padding bg-light-custom" id="screenshots">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 mx-auto text-center mb-5">
@@ -403,7 +516,7 @@
     </section>
 
     <!-- Testimonial Section -->
-    <section class="section-padding">
+    <section class="section-padding" id="testimonial">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 mx-auto">
@@ -418,12 +531,12 @@
                             benissimo
                             e non abbiamo più errori nei conti. È stato un investimento che si è ripagato subito!"
                         </p>
-                        <div class="d-flex align-items-center justify-content-center gap-3">
+                        <div class="d-flex align-items-center justify-content-center gap-3 flex-column flex-sm-row">
                             <div class="bg-primary-custom text-white rounded-circle d-flex align-items-center justify-content-center"
                                 style="width: 50px; height: 50px;">
                                 <i class="fas fa-user"></i>
                             </div>
-                            <div class="text-start">
+                            <div class="text-center">
                                 <h6 class="mb-0 fw-bold">Alessandra Basso</h6>
                                 <small class="text-muted">Proprietaria, Agenzia Bassanese</small>
                             </div>
@@ -435,7 +548,7 @@
     </section>
 
     <!-- Pricing Section -->
-    <section class="section-padding bg-light-custom">
+    <section class="section-padding bg-light-custom" id="pricing">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 mx-auto text-center mb-5">
@@ -459,7 +572,8 @@
                             <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Gestione Base</li>
                             <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Supporto Email</li>
                         </ul>
-                        <button class="btn btn-outline-primary w-100">Scegli Starter</button>
+                        <button class="btn btn-outline-primary w-100" onclick="scrollToNewsletter()">Scegli
+                            Starter</button>
                     </div>
                 </div>
                 <div class="col-lg-4">
@@ -477,7 +591,8 @@
                             <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Report Completi</li>
                             <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Supporto Prioritario</li>
                         </ul>
-                        <button class="btn btn-warning-custom w-100">Scegli Professional</button>
+                        <button class="btn btn-warning-custom w-100" onclick="scrollToNewsletter()">Scegli
+                            Professional</button>
 
                     </div>
                 </div>
@@ -494,7 +609,8 @@
                             <li class="mb-2"><i class="fas fa-check text-success me-2"></i>API Integration</li>
                             <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Supporto Dedicato</li>
                         </ul>
-                        <button class="btn btn-outline-primary w-100">Contattaci</button>
+                        <button class="btn btn-outline-primary w-100" onclick="scrollToNewsletter()">Scegli
+                            Enterprise</button>
                     </div>
                 </div>
             </div>
@@ -509,12 +625,15 @@
                     <div class="mb-4">
                         <i class="fas fa-gift fa-3x mb-3"></i>
                     </div>
-                    <h2 class="display-5 fw-bold mb-3 animate-on-scroll">Resta Aggiornato - PRIMO MESE GRATIS!</h2>
-                    <p class="lead mb-5 animate-on-scroll">
-                        Iscriviti per ricevere una notifica quando Gestione Incassi sarà disponibile.
-                        <strong>Primo mese completamente gratuito</strong> per i primi iscritti!
-                    </p>
-                    <form class="newsletter-form animate-on-scroll" onsubmit="handleNewsletterSubmit(event)">
+                    <h2 class="display-5 fw-bold mb-3 animate-on-scroll text-warning"
+                        style="text-shadow: 0 2px 12px rgba(0,0,0,0.10);">Resta Aggiornato - PRIMO MESE GRATIS!</h2>
+                    <p class="lead mb-5 animate-on-scroll fw-bold" style="font-size:1.35rem; color:#333;">Iscriviti per
+                        ricevere una notifica quando Gestione
+                        Incassi sarà disponibile.<br><strong>Primo mese completamente gratuito</strong> per i primi
+                        iscritti!</p>
+                    <form
+                        class="newsletter-form animate-on-scroll p-4 shadow-lg border border-warning rounded-4 bg-white position-relative"
+                        style="z-index:2;">
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <input type="text" class="form-control form-control-custom" placeholder="Il tuo nome *"
@@ -563,8 +682,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
-                    <h5 class="text-warning mb-3">
-                        <i class="fas fa-euro-sign me-2"></i>Gestione Incassi
+                    <h5 class="text-warning mb-3 d-flex align-items-center gap-2">
+                        <img src="GestioneIncassiGiallo.png" alt="Gestione Incassi"
+                            style="height: 32px; width: auto; display: block; object-fit: contain;" loading="lazy">
+                        Gestione Incassi
                     </h5>
                     <p class="text-white">
                         Il sistema di gestione incassi che fa risparmiare tempo e garantisce controllo totale.
@@ -572,12 +693,17 @@
                     </p>
                 </div>
                 <div class="col-lg-6">
-                    <h5 class="text-warning mb-3">Contatti</h5>
-                    <ul class="list-unstyled">
-                        <li><i class="fas fa-phone-alt me-2"></i>+39 0424 066 922</li>
-                        <li><i class="fas fa-envelope me-2"></i>
+                    <h5 class="text-warning mb-3 text-lg-end text-start">Contatti</h5>
+                    <ul class="list-unstyled text-lg-end text-start mb-0">
+                        <li class="mb-2">
+                            <i class="fas fa-phone-alt me-2"></i>
+                            <a href="tel:+390424066922" class="text-white text-decoration-none"
+                                style="word-break:break-all;">+39 0424 066 922</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope me-2"></i>
                             <a href="mailto:info@gestioneincassi.cloud"
-                                class="text-white">info@gestioneincassi.cloud</a>
+                                class="text-white text-decoration-none">info@gestioneincassi.cloud</a>
                         </li>
                     </ul>
                 </div>
@@ -586,9 +712,21 @@
                     <div class="col-lg-6">
                         <p class="small mb-0">&copy; 2025 Gestione Incassi. Tutti i diritti riservati.</p>
                     </div>
-                    <div class="col-lg-6 text-lg-end">
-                        <a href="#" class="text-muted small me-3">Privacy Policy</a>
-                        <a href="#" class="text-muted small">Termini di Servizio</a>
+                    <div
+                        class="col-lg-6 text-lg-end text-start mt-3 mt-lg-0 d-flex flex-column flex-lg-row align-items-start align-items-lg-center justify-content-lg-end gap-2">
+                        <span>
+                            <a href="#" class="text-muted small me-3">Privacy Policy</a>
+                            <a href="#" class="text-muted small">Termini di Servizio</a>
+                        </span>
+                        <span class="d-flex align-items-center gap-2">
+                            <a href="https://landing.4safe.online/offerta" target="_blank" rel="noopener"
+                                class="d-flex align-items-center gap-2 text-white text-decoration-none">
+                                <img src="4Safe.png" alt="4Safe"
+                                    style="height: 28px; width: auto; display: block; object-fit: contain;"
+                                    loading="lazy">
+                                <span>4Safe</span>
+                            </a>
+                        </span>
                     </div>
                 </div>
             </div>
@@ -597,66 +735,35 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         // Scroll animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('animated');
                 }
             });
-        }, observerOptions);
-
-        document.querySelectorAll('.animate-on-scroll').forEach(el => {
-            observer.observe(el);
-        });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+        document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
 
         // Smooth scroll to newsletter
         function scrollToNewsletter() {
-            document.getElementById('newsletter').scrollIntoView({
-                behavior: 'smooth'
-            });
+            document.getElementById('newsletter').scrollIntoView({ behavior: 'smooth' });
         }
 
         // Newsletter form submission
         function handleNewsletterSubmit(event) {
             event.preventDefault();
-
-            // Here you would typically send the data to your backend
-            const formData = new FormData(event.target);
-
-            // Show success message
-            const button = event.target.querySelector('button[type="submit"]');
-            const originalText = button.innerHTML;
-
-            button.innerHTML = '<i class="fas fa-check me-2"></i>Iscrizione Completata!';
-            button.classList.remove('btn-primary-custom');
-            button.classList.add('btn-success');
-            button.disabled = true;
-
-            // Reset form after 3 seconds
-            setTimeout(() => {
-                button.innerHTML = originalText;
-                button.classList.remove('btn-success');
-                button.classList.add('btn-primary-custom');
-                button.disabled = false;
-                event.target.reset();
-            }, 3000);
+            window.location.href = "thank-you.html";
         }
 
-        // Add some interactive effects
+        // Feature card icon hover effect
         document.querySelectorAll('.feature-card').forEach(card => {
             card.addEventListener('mouseenter', () => {
                 const icon = card.querySelector('.feature-icon');
-                icon.style.transform = 'scale(1.1) rotate(5deg)';
+                if (icon) icon.style.transform = 'scale(1.1) rotate(5deg)';
             });
-
             card.addEventListener('mouseleave', () => {
                 const icon = card.querySelector('.feature-icon');
-                icon.style.transform = 'scale(1) rotate(0deg)';
+                if (icon) icon.style.transform = 'scale(1) rotate(0deg)';
             });
         });
     </script>
